@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 import csv
-import sqlite3
 from pydantic import BaseModel
 import pandas as pd
 from sqlalchemy.ext.automap import automap_base
@@ -11,6 +10,7 @@ from ClasesApi.EntradaDatos import EntradaDatos
 from ClasesApi.Resultados import Reultados
 from ClasesApi.Busqueda import Busqueda
 from ClasesApi.Usuario import Usuario
+from ClasesApi.Historial import Historial
 
 
 
@@ -36,10 +36,16 @@ async def root():
 
 @app.get("/historial")
 async def historial(id:int):
+    historial = []
     stmt = select(Base.classes.Historial).where(Base.classes.Historial.id_usuario == id)
     with engine.connect() as connection:
-        result = connection.execute(stmt)
-    return result
+        for row in  connection.execute(stmt):
+            buscar = Busqueda()
+            buscar.titulo = row.titulo
+            buscar.url = row.url
+            historial.append(buscar)
+
+    return Historial(historial)
 
 
 
@@ -84,22 +90,6 @@ async def busqueda(busqueda: BusquedaEntrada):
 
 
 
-@app.post("/nuevousuario")
-def insert_alumno(usuario: Usuario):
-    with sqlite3.connect("bzths6jyaksc7qfl8qpg.db") as conn:
-        cursor = conn.cursor()
-        cursor.execute("""
-            INSERT INTO Usuarios (usuario, contraseña)
-            VALUES (?, ?)
-        """, (usuario.usuario, usuario.contraseña))
-        conn.commit()
-    return {
-        "message": "Usuario registrado!",
-        "data": {
-            "usuario": usuario.usuario,
-            "id": usuario.id,
-        }
-    }
 
 
 
