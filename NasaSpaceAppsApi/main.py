@@ -33,6 +33,33 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}
 
+@app.post("/registeruser")
+async def register_user(usuario: Usuario):
+    stmt = select(Base.classes.Usuarios).where(Base.classes.Usuarios.usuario == usuario.usuario)
+    with engine.connect() as connection:
+        result = connection.execute(stmt).first()
+
+        if result:
+            return {"message": "Usuario ya existe"}
+        else:
+            ins = insert(Base.classes.Usuarios).values(usuario=usuario.usuario, contraseña=usuario.contraseña)
+            connection.execute(ins)
+            connection.commit()
+            return {"message": "Usuario registrado exitosamente"}
+
+
+@app.post("/verifyuser")
+async def verify_user(usuario: Usuario):
+    stmt = select(Base.classes.Usuarios).where(Base.classes.Usuarios.usuario == usuario.usuario)
+    with engine.connect() as connection:
+        result = connection.execute(stmt).first()
+        
+        if result:
+            return {"message": "Aqui se dirige al menu principal", "id": result.id}
+        else:
+            return {"message": "Datos incorrectos"}
+            return{ "Message": "Aqui se dirige de nuevo al login"}
+
 
 @app.get("/historial")
 async def historial(id:int):
