@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import csv
+import sqlite3
 from pydantic import BaseModel
 import pandas as pd
 from sqlalchemy.ext.automap import automap_base
@@ -9,6 +10,10 @@ from ClasesApi.BusquedaEntrada import BusquedaEntrada
 from ClasesApi.EntradaDatos import EntradaDatos
 from ClasesApi.Resultados import Reultados
 from ClasesApi.Busqueda import Busqueda
+from ClasesApi.Usuario import Usuario
+
+
+
 app = FastAPI()
 
 engine = create_engine("mysql+pymysql://udxujdjuoiegl6tz:NZ6xcIlGvn44sd4zb5T@bzths6jyaksc7qfl8qpg-mysql.services.clever-cloud.com:20620/bzths6jyaksc7qfl8qpg")
@@ -65,6 +70,27 @@ async def busqueda(busqueda: BusquedaEntrada):
             buscar.titulo = titulos[j]
             buscar.url = links[j]
     return buscar
+
+
+
+@app.post("/nuevousuario")
+def insert_alumno(usuario: Usuario):
+    with sqlite3.connect("bzths6jyaksc7qfl8qpg.db") as conn:
+        cursor = conn.cursor()
+        cursor.execute("""
+            INSERT INTO Usuarios (usuario, contraseña)
+            VALUES (?, ?)
+        """, (usuario.usuario, usuario.contraseña))
+        conn.commit()
+    return {
+        "message": "Usuario registrado!",
+        "data": {
+            "usuario": usuario.usuario,
+            "id": usuario.id,
+        }
+    }
+
+
 
 
 
