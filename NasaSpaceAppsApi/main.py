@@ -2,7 +2,7 @@ from fastapi import FastAPI
 import csv
 from pydantic import BaseModel
 import pandas as pd
-
+from ClasesApi.BusquedaEntrada import BusquedaEntrada
 from ClasesApi.EntradaDatos import EntradaDatos
 from ClasesApi.Resultados import Reultados
 from ClasesApi.Busqueda import Busqueda
@@ -12,6 +12,7 @@ app = FastAPI()
 data = pd.read_csv("SB_publication_PMC.csv")
 
 titulos = data.Title.values.tolist()
+links = data.Link.values.tolist()
 
 
 @app.get("/")
@@ -49,6 +50,17 @@ def enter_data(  entradadatos: EntradaDatos):
     else:
         return None 
 
+
+@app.post("/busqueda")
+async def busqueda(busqueda: BusquedaEntrada):
+    buscar = Busqueda()
+    buscar.titulo = ""
+    buscar.url = ""
+    for j in range(0 , len(titulos) -1):
+        if titulos[j] == busqueda.titulo:
+            buscar.titulo = titulos[j]
+            buscar.url = links[j]
+    return buscar
 
 
 

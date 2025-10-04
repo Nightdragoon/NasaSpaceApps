@@ -1,8 +1,5 @@
-import pydantic
-from pydantic import BaseModel
 
-class Busqueda(BaseModel):
+
+class Busqueda:
     titulo: str
     url: str
-    description: str
-    
