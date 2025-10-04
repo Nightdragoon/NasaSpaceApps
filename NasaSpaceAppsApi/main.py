@@ -5,7 +5,7 @@ from pydantic import BaseModel
 import pandas as pd
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine , select , insert , delete, update
 from ClasesApi.BusquedaEntrada import BusquedaEntrada
 from ClasesApi.EntradaDatos import EntradaDatos
 from ClasesApi.Resultados import Reultados
@@ -32,6 +32,17 @@ app = FastAPI()
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
+
+
+@app.get("/historial")
+async def historial(id:int):
+    stmt = select(Base.classes.Historial).where(Base.classes.Historial.id_usuario == id)
+    with engine.connect() as connection:
+        result = connection.execute(stmt)
+    return result
+
+
+
 
 #para iniciarlo  uvicorn main:app --reload
 @app.get("/hello/{name}")
