@@ -69,6 +69,7 @@ async def insertarHistorial(historial: HistorialEntrada):
         conexion = connection.execute(stmt)
         connection.commit()
     return {"ok":"ok"}
+  
 @app.get("/historial")
 async def historial(id:int):
     historial = []
@@ -104,12 +105,10 @@ async def prueba():
 
 
 @app.post("/enterdata")
-def enter_data(  entradadatos: EntradaDatos):
+async def enter_data(  entradadatos: EntradaDatos):
 
     datos = [ p for p in titulos if p.startswith(entradadatos.palabra)]
-
     return Reultados(datos)
-
 
 
 @app.post("/busqueda")
