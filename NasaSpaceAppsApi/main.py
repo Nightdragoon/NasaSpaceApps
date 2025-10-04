@@ -11,6 +11,7 @@ from ClasesApi.Resultados import Reultados
 from ClasesApi.Busqueda import Busqueda
 from ClasesApi.Usuario import Usuario
 from ClasesApi.Historial import Historial
+from ClasesApi.HistorialEntrada import HistorialEntrada
 
 
 
@@ -61,6 +62,13 @@ async def verify_user(usuario: Usuario):
             return{ "Message": "Aqui se dirige de nuevo al login"}
 
 
+@app.post("/insertarHistorial")
+async def insertarHistorial(historial: HistorialEntrada):
+    stmt = insert(Base.classes.Historial).values(id_usuario=historial.id_usuario , titulo=historial.titulo, url=historial.url)
+    with engine.connect() as connection:
+        conexion = connection.execute(stmt)
+        connection.commit()
+    return {"ok":"ok"}
 @app.get("/historial")
 async def historial(id:int):
     historial = []
