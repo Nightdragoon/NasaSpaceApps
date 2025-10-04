@@ -14,12 +14,13 @@ data = pd.read_csv("SB_publication_PMC.csv")
 titulos = data.Title.values.tolist()
 links = data.Link.values.tolist()
 
+app = FastAPI()
 
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
-#uvicorn main:app --reload
 
+#para iniciarlo  uvicorn main:app --reload
 @app.get("/hello/{name}")
 async def say_hello(name: str):
     return {"message": f"Hello {name}"}
