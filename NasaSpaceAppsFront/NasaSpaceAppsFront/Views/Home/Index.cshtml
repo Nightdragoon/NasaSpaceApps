@@ -1,8 +1,23 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<main class="helios-container">
+    <header class="helios-header">
+        <h1>HELIOS</h1>
+        <nav>
+            <button>Home</button>
+            <button>Log in</button>
+            <button>Sign up</button>
+        </nav>
+    </header>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <section class="helios-main">
+        <h2>WELCOME</h2>
+        <p>"From cells to stars — discover how life adapts beyond Earth."</p>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Hinted search text">
+            <button>🔍</button>
+        </div>
+    </section>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg"
+         alt="Earth" class="planet" />
+</main>
