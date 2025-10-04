@@ -2,12 +2,20 @@ from fastapi import FastAPI
 import csv
 from pydantic import BaseModel
 import pandas as pd
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
 from ClasesApi.BusquedaEntrada import BusquedaEntrada
 from ClasesApi.EntradaDatos import EntradaDatos
 from ClasesApi.Resultados import Reultados
 from ClasesApi.Busqueda import Busqueda
 app = FastAPI()
 
+engine = create_engine("mysql+pymysql://udxujdjuoiegl6tz:NZ6xcIlGvn44sd4zb5T@bzths6jyaksc7qfl8qpg-mysql.services.clever-cloud.com:20620/bzths6jyaksc7qfl8qpg")
+
+Base = automap_base()
+
+Base.prepare(engine, reflect=True)
 
 data = pd.read_csv("SB_publication_PMC.csv")
 
@@ -43,13 +51,8 @@ def enter_data(  entradadatos: EntradaDatos):
 
     datos = [ p for p in titulos if p.startswith(entradadatos.palabra)]
 
+    return Reultados(datos)
 
-    coincidencias = [p for p in datos if entradadatos.palabra.lower() in p.lower() ]
-
-    if coincidencias:
-        return Reultados(coincidencias) 
-    else:
-        return None 
 
 
 @app.post("/busqueda")
