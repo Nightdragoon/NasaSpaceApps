@@ -39,17 +39,10 @@ async def prueba():
 
 
 @app.post("/enterdata")
-def enter_data(  entradadatos: EntradaDatos):
+async def enter_data(  entradadatos: EntradaDatos):
 
     datos = [ p for p in titulos if p.startswith(entradadatos.palabra)]
-
-
-    coincidencias = [p for p in datos if entradadatos.palabra.lower() in p.lower() ]
-
-    if coincidencias:
-        return Reultados(coincidencias) 
-    else:
-        return None 
+    return Reultados(datos)
 
 
 @app.post("/busqueda")
