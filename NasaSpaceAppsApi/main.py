@@ -1,18 +1,17 @@
 from fastapi import FastAPI
 import csv
 from pydantic import BaseModel
+import pandas as pd
 
 from ClasesApi.EntradaDatos import EntradaDatos
 from ClasesApi.Resultados import Reultados
 from ClasesApi.Busqueda import Busqueda
 app = FastAPI()
 
-with open("SB_publication_PMC.csv") as file:
-    reader = csv.reader(file)
-    header = next(reader)
-    data_rows = [row for row in header]
 
+data = pd.read_csv("SB_publication_PMC.csv")
 
+titulos = data.Title.values.tolist()
 
 
 @app.get("/")
@@ -39,10 +38,8 @@ async def prueba():
 
 @app.post("/enterdata")
 def enter_data(  entradadatos: EntradaDatos):
-    datos=[ ]
-    datos.append("entradadatos1")
-    datos.append("entradadatos2")
-    datos.append("entradadatos3")
+
+    datos = [ p for p in titulos if p.startswith(entradadatos.palabra)]
 
 
     coincidencias = [p for p in datos if entradadatos.palabra.lower() in p.lower() ]
