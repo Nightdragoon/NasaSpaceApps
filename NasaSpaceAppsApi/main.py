@@ -44,7 +44,17 @@ def enter_data(  entradadatos: EntradaDatos):
     datos.append("entradadatos2")
     datos.append("entradadatos3")
 
-    return Reultados(datos)
+
+    coincidencias = [p for p in datos if p.lower() == entradadatos.palabra.lower()]
+
+    if coincidencias:
+        return Reultados(coincidencias) 
+    else:
+        return None 
+
+
+
+
 
 
 
