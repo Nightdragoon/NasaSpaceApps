@@ -1,2 +1,17 @@
 .env
 __pycache__
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Entornos
+.venv/
+venv/
+.env/
+.env.*/
