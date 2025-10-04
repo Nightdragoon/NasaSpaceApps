@@ -4,6 +4,7 @@ from pydantic import BaseModel
 
 from ClasesApi.EntradaDatos import EntradaDatos
 from ClasesApi.Resultados import Reultados
+from ClasesApi.Busqueda import Busqueda
 app = FastAPI()
 
 with open("SB_publication_PMC.csv") as file:
