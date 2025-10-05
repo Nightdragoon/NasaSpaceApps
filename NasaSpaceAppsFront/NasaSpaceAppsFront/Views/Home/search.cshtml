@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>HELIOS – Resultados</title>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">H</div>
+        <strong>HELIOS</strong>
+      </div>
+
+      <div class="searchwrap" role="search">
+        <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="7" stroke-width="2"/><line x1="21" y1="21" x2="16.65" y2="16.65" stroke-width="2"/></svg>
+        <label class="sr-only" for="q">Buscar</label>
+        <input id="q" placeholder="Busca artículos, autores o temas…" autocomplete="off" />
+        <div class="hint"><kbd>/</kbd> para buscar</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <nav class="tabs" aria-label="Tipos de resultados">
+        <button class="tab active" data-tab="all">Todo</button>
+        <button class="tab" data-tab="news">Noticias</button>
+        <button class="tab" data-tab="image">Imágenes</button>
+        <button class="tab" data-tab="maps">Mapas</button>
+        <button class="tab" data-tab="video">Videos</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container grid" id="layout" aria-live="polite">
+    <!-- Resultados -->
+    <section id="results" aria-label="Resultados de búsqueda" class="col">
+      <!-- JS inyecta tarjetas aquí -->
+    </section>
+
+    <!-- Rail derecho -->
+    <aside class="col" id="rail">
+      <div class="card block">
+        <h4>Refinar búsqueda</h4>
+        <div style="display:grid; gap:10px">
+          <div>
+            <label for="f-date">Fecha</label>
+            <select id="f-date">
+              <option value="any">Cualquier fecha</option>
+              <option value="24h">Últimas 24 h</option>
+              <option value="week">Última semana</option>
+              <option value="month">Último mes</option>
+            </select>
+          </div>
+          <div>
+            <label for="f-region">Región</label>
+            <select id="f-region">
+              <option value="mx">México</option>
+              <option value="global">Global</option>
+            </select>
+          </div>
+          <div>
+            <label for="f-type">Tipo</label>
+            <select id="f-type">
+              <option value="any">Cualquiera</option>
+              <option value="news">Noticias</option>
+              <option value="image">Imágenes</option>
+              <option value="maps">Mapas</option>
+              <option value="video">Videos</option>
+              <option value="article">Artículos</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="card block">
+        <h4>Búsquedas relacionadas</h4>
+        <ul class="rel-list" id="related"></ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="container">
+    <a href="#">Privacidad</a>
+    <a href="#">Términos</a>
+    <a href="#">Acerca de</a>
+  </footer>
+
+<script>
+  // --- Datos de ejemplo ---
+  const DATA = [
+    {id:1, title:"Eclipse solar en México en 2026", snippet:"Fechas, visibilidad y recomendaciones para observar el eclipse.", domain:"helos.com", url:"#", type:"article"},
+    {id:2, title:"Cómo observar el eclipse de 2026 en México", snippet:"Seguridad ocular, filtros certificados y mapas de trayectoria.", domain:"cexpro.com", url:"#", type:"news"},
+    {id:3, title:"Eventos astronómicos destacados de 2026", snippet:"Calendario de lluvias de meteoros y eclipses relevantes.", domain:"astro.mx", url:"#", type:"article"},
+    {id:4, title:"Galería: imágenes del eclipse total", snippet:"Colección curada en alta resolución del último eclipse.", domain:"helios-imgs.net", url:"#", type:"image"},
+    {id:5, title:"Mapa interactivo de trayectoria", snippet:"Franja de totalidad y puntos óptimos por región.", domain:"mapas.io", url:"#", type:"maps"},
+    {id:6, title:"Documental corto: el día se hizo noche", snippet:"Time-lapses y testimonios del fenómeno.", domain:"helios.tv", url:"#", type:"video"}
+  ];
+  const RELATED = [
+    "eclipse total en México",
+    "eclipse solar 2027",
+    "mejores lugares para ver el eclipse",
+    "calendario astronómico 2026"
+  ];
+
+  // --- Estado ---
+  const state = { q: "eclipse 2026 en México", tab: "all", date:"any", region:"mx", type:"any" };
+
+  // --- DOM refs ---
+  const $q = document.getElementById("q");
+  const $results = document.getElementById("results");
+  const $tabs = Array.from(document.querySelectorAll(".tab"));
+  const $related = document.getElementById("related");
+
+  // Render related
+  RELATED.forEach(txt=>{
+    const li=document.createElement("li");
+    const btn=document.createElement("button");
+    btn.className="rel";
+    btn.innerHTML=<span>›</span><span>${txt}</span>;
+    btn.addEventListener("click", ()=>{ $q.value = txt; state.q = txt; render(); $q.focus(); });
+    li.appendChild(btn); $related.appendChild(li);
+  });
+
+  // Atajos teclado
+  window.addEventListener("keydown", e=>{
+    if(e.key === "/"){ e.preventDefault(); $q.focus(); $q.select(); }
+    if(e.key === "Escape"){ $q.value=""; state.q=""; render(); }
+  });
+
+  // Inputs y filtros
+  $q.value = state.q;
+  $q.addEventListener("input", e=>{ state.q = e.target.value; render(); });
+
+  document.getElementById("f-date").addEventListener("change", e=>{ state.date=e.target.value; render(); });
+  document.getElementById("f-region").addEventListener("change", e=>{ state.region=e.target.value; render(); });
+  document.getElementById("f-type").addEventListener("change", e=>{ state.type=e.target.value; render(); });
+
+  $tabs.forEach(t=>{
+    t.addEventListener("click", ()=>{
+      $tabs.forEach(x=>x.classList.remove("active"));
+      t.classList.add("active");
+      state.tab = t.dataset.tab;
+      render();
+    });
+  });
+
+  // Filtro de resultados (mock simple)
+  function getResults(){
+    const term = state.q.trim().toLowerCase();
+    let list = DATA.filter(r => !term || (r.title+r.snippet).toLowerCase().includes(term));
+    if (state.tab !== "all") list = list.filter(r => r.type === state.tab);
+    if (state.type !== "any") list = list.filter(r => r.type === state.type);
+    // date/region: placeholders para conectar a tu API
+    return list;
+  }
+
+  // Render
+  function render(){
+    const list = getResults();
+    $results.innerHTML = "";
+    if(list.length === 0){
+      const empty = document.createElement("div");
+      empty.className = "card";
+      empty.textContent = "No hay resultados. Ajusta filtros o intenta otra consulta.";
+      $results.appendChild(empty);
+      return;
+    }
+    list.forEach(item=>{
+      const a = document.createElement("a"); a.href=item.url; a.className="card result"; a.setAttribute("target","_blank");
+      a.innerHTML = `
+        <div class="domain">${item.domain}</div>
+        <h3>${item.title}</h3>
+        <p>${item.snippet}</p>
+      `;
+      $results.appendChild(a);
+    });
+  }
+
+  render();
+</script>
+</body>
+</html>

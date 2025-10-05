@@ -23,6 +23,15 @@ namespace NasaSpaceAppsFront.Controllers
             return View();
         }
 
+        public async Task<IActionResult> login()
+        {
+            return View();
+        }
+        public async Task<IActionResult> singUp()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

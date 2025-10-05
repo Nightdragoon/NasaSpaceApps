@@ -23,14 +23,22 @@ from ClasesApi.ArticuloResumen import ArticuloResumen
 from ClasesApi.Articulo import Articulo
 # OpenAI
 from openai import OpenAI
+from fastapi.middleware.cors import CORSMiddleware
 
 import json
 
 
-client = OpenAI()
 
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],       # cualquier origen
+    allow_methods=["*"],       # cualquier método (GET,POST,PUT,DELETE,OPTIONS,...)
+    allow_headers=["*"],       # cualquier header
+    allow_credentials=False,   # importante: con "*" no puedes enviar cookies/sesiones
+)
 
 engine = create_engine("mysql+pymysql://udxujdjuoiegl6tz:NZ6xcIlGvn44sd4zb5T@bzths6jyaksc7qfl8qpg-mysql.services.clever-cloud.com:20620/bzths6jyaksc7qfl8qpg")
 
@@ -51,7 +59,6 @@ data = pd.read_csv("SB_publication_PMC.csv")
 titulos = data.Title.values.tolist()
 links = data.Link.values.tolist()
 
-app = FastAPI()
 
 
 

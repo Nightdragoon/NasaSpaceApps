@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: radial-gradient(ellipse at top, #081229 0%, #000 100%);
+  color: white;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.helios-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 80px;
+}
+
+.helios-header h1 {
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+
+.helios-header nav button {
+  background: transparent;
+  border: 1px solid #ccc;
+  color: white;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.helios-header nav button:hover {
+  background: #00aaff;
+  border-color: #00aaff;
+}
+
+.helios-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.helios-main h2 {
+  font-size: 60px;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.helios-main p {
+  color: #ccc;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  padding: 10px 20px;
+  width: 350px;
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  color: white;
+  flex: 1;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-bar button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.planet {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 900px;
+  opacity: 0.95;
+  z-index: -1;
+}

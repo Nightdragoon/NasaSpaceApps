@@ -1,0 +1,124 @@
+/* pexels-kaip-1341279 1 */
+.bg-photo{
+  position:absolute; width:1569px; height:1046px; left:-98px; top:0;
+  background:url('/img/pexels-kaip-1341279.jpg') center/cover no-repeat;
+  opacity:0.3;
+}
+
+/* Rectangle 1 */
+.rect-1{
+  box-sizing:border-box;
+  position:absolute; width:1441px; height:1323px; left:0; top:0;
+  background:linear-gradient(178.62deg,#0B1226 38.24%,#17254E 60.63%,#29428C 95.41%);
+  border:1px solid #000; box-shadow:0 4px 4px rgba(0,0,0,.25);
+  /* si se ve duplicado con rect-3, puedes ocultar uno */
+}
+
+/* Rectangle 3 (idéntico a Rectangle 1 en tu export) */
+.rect-3{
+  box-sizing:border-box;
+  position:absolute; width:1441px; height:1323px; left:0; top:0;
+  background:linear-gradient(178.62deg,#0B1226 38.24%,#17254E 60.63%,#29428C 95.41%);
+  border:1px solid #000; box-shadow:0 4px 4px rgba(0,0,0,.25);
+}
+
+/* Captura_de_pantalla_... (logo) */
+.brand-logo{
+  position:absolute; width:97px; height:99px; left:52px; top:58px;
+  object-fit:contain;
+  background:url('/img/Captura_de_pantalla_2025-10-04_130505-removebg-preview.png') center/contain no-repeat;
+  /* si prefieres <img>, puedes omitir background */
+}
+
+/* Log In (título) */
+.login-title{
+  position:absolute; width:588px; height:170px; left:99px; top:53px;
+  font-family:'Roboto Mono', monospace; font-style:normal; font-weight:500;
+  font-size:48px; line-height:16px; letter-spacing:.5px;
+  color:#FFF; display:flex; align-items:center; text-align:center;
+  margin:0;
+}
+
+/* Form Log In (tarjeta) */
+.form-login{
+  box-sizing:border-box;
+  display:flex; flex-direction:column; align-items:flex-start;
+  padding:24px; gap:24px;
+  position:absolute; width:1136px; min-width:320px; height:322px; left:135px; top:170px;
+  background:#0B1226; opacity:.5; border:1px solid #0B1226; border-radius:8px;
+}
+
+/* Input Field (wrapper por campo) */
+.input-field{
+  display:flex; flex-direction:column; align-items:flex-start; padding:0; gap:8px;
+  width:1088px; height:70px;
+}
+
+/* Label */
+.label{
+  width:1088px; height:22px;
+  font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-weight:400; font-size:16px; line-height:140%; color:#F3F3F3;
+}
+
+/* Description (oculta en tu export) */
+.description{
+  display:none; width:240px; height:22px;
+  font-family:'Inter'; font-weight:400; font-size:16px; line-height:140%; color:#757575;
+}
+
+/* Input (contenedor visual del input) */
+.input{
+  display:flex; flex-direction:row; align-items:center; padding:12px 16px;
+  width:1088px; min-width:240px; height:40px;
+  background:#1B284D; border:1px solid #D9D9D9; border-radius:8px;
+}
+
+/* Value (el <input> real) */
+.value{
+  width:100%; height:16px;
+  font-family:'Inter'; font-weight:400; font-size:16px; line-height:100%;
+  color:#B3B3B3; background:transparent; border:0; outline:0;
+}
+
+/* Error (oculto) */
+.error{
+  display:none; width:37px; height:22px;
+  font-family:'Inter'; font-weight:400; font-size:16px; line-height:140%;
+  color:#1E1E1E;
+}
+
+/* Button Group */
+.button-group{
+  display:flex; flex-direction:row; align-items:center; padding:0; gap:16px;
+  width:1088px; height:40px;
+}
+
+/* Button (principal) */
+.button{
+  box-sizing:border-box;
+  display:flex; flex-direction:row; justify-content:center; align-items:center;
+  padding:12px; gap:8px;
+  width:1088px; height:40px;
+  background:#E3E3E3; border:1px solid #2C2C2C; border-radius:8px;
+  cursor:pointer;
+  font-family:'Inter'; font-weight:400; font-size:16px; line-height:100%; color:#1E1E1E;
+}
+
+/* Button secundario (si lo muestras) */
+.button--secondary{
+  display:flex; width:112px; height:40px; padding:12px; gap:8px; border-radius:8px;
+}
+
+/* Text Link (contenedor) */
+.text-link{
+  display:flex; flex-direction:row; align-items:flex-start; padding:0;
+  width:1088px; height:22px;
+}
+
+/* Text Link (enlace) */
+.text-link__a{
+  width:auto; height:22px;
+  font-family:'Inter'; font-weight:400; font-size:16px; line-height:140%;
+  text-decoration:underline; color:#F3F3F3;
+}
