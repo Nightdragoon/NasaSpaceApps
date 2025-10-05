@@ -1,15 +1,13 @@
 // assets/js/controller.js
 document.addEventListener('DOMContentLoaded', () => {
-  // ========= RUTAS (ajústalas a tu app) =========
+
   const ROUTES = {
     results:  'results.html',   // o '/Search' si usas MVC
     login:    'login.cshtml',   // o '/Account/Login'
     register: 'signup.cshtml'   // o '/Account/Register'
   };
 
-  // Dónde está tu JSON (ajusta según tu proyecto)
-  // Si este archivo está en assets/js/controller.js y tu JSON en assets/model/data.json:
-  // usa '../model/data.json'
+  
   const DATA_URL = '../model/data.json';
 
   // ========= REFERENCIAS =========
@@ -18,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const $searchForm = document.getElementById('searchForm');   // form (si existe)
   const $results = document.getElementById('results');         // contenedor resultados (si quieres render inline)
 
-  // Botones de navegación (si existen)
   const $btnLoginNav    = document.getElementById('btnLoginNav');
   const $btnRegisterNav = document.getElementById('btnRegisterNav');
   const $btnLoginMain   = document.getElementById('btnLogin');     // por si tienes ids en el main

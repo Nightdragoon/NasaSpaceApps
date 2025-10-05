@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\adany\\OneDrive\\Documentos\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\adany\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+    "C:\\Users\\LENOVO\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\LENOVO\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\LENOVO\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj",
+        "projectName": "NasaSpaceAppsFront",
+        "projectPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\LENOVO\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> e29b1ecff11de7523e5d82b7e0fb09f1bf84373d
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -61,7 +78,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.414/PortableRuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+>>>>>>> e29b1ecff11de7523e5d82b7e0fb09f1bf84373d
         }
       }
     }

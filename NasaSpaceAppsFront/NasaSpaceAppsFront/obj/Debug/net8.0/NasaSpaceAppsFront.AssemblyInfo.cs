@@ -14,10 +14,14 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 <<<<<<< HEAD
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b7ed7bfc86f776242c5ffc6007d301d7e5a650d3")]
 =======
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2df955f6b988ecbbd590e8bb5fa3571d66014e77")]
 >>>>>>> dc4d848ae537add06cfcd9ef04e7979c7d17bbef
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed49cb176335d8b976e81bea68a4d5d12aa272d0")]
+>>>>>>> e29b1ecff11de7523e5d82b7e0fb09f1bf84373d
 [assembly: System.Reflection.AssemblyProductAttribute("NasaSpaceAppsFront")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NasaSpaceAppsFront")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

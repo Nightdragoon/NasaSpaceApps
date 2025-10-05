@@ -18,16 +18,19 @@ namespace NasaSpaceAppsFront.Controllers
             return View();
         }
 
+        
+
+
         public IActionResult Privacy()
         {
             return View();
         }
 
-        public async Task<IActionResult> login()
+        public IActionResult login()
         {
             return View();
         }
-        public async Task<IActionResult> singUp()
+        public IActionResult singUp()
         {
             return View();
         }
