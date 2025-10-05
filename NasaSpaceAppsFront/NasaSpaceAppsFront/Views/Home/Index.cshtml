@@ -49,7 +49,7 @@
             }
             <button class="btn btn-outline-light"
                 data-bs-toggle="offcanvas" data-bs-target="#ajustesPanel"
-                aria-controls="ajustesPanel">Ajustes</button>
+                aria-controls="ajustesPanel">Settings</button>
 
         </div>
     </div>
@@ -82,7 +82,7 @@
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="ajustesPanel" aria-labelledby="ajustesTitle">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="ajustesTitle">Configuración de accesibilidad</h5>
+        <h5 class="offcanvas-title" id="ajustesTitle">Accessibility Settings</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
     </div>
     <div class="offcanvas-body">
@@ -92,14 +92,14 @@
                 <h2 class="accordion-header" id="hdrVision">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#colVision" aria-expanded="true" aria-controls="colVision">
-                        Visión
+                        Appearance
                     </button>
                 </h2>
                 <div id="colVision" class="accordion-collapse collapse show" data-bs-parent="#ajustesAccordion">
                     <div class="accordion-body">
                         <div class="form-check mb-2">
                             <input class="form-check-input Ciego" type="checkbox" id="Ciego">
-                            <label class="form-check-label" for="highContrast">Ciego</label>
+                            <label class="form-check-label" for="highContrast">Visual Impairment</label>
                         </div>
                         
                     </div>
@@ -110,7 +110,7 @@
                 <h2 class="accordion-header" id="hdrDaltonismo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#colDaltonismo" aria-expanded="false" aria-controls="colDaltonismo">
-                        Daltonismo
+                        Daltonism
                     </button>
                 </h2>
                 <div id="colDaltonismo" class="accordion-collapse collapse" data-bs-parent="#ajustesAccordion">
@@ -143,8 +143,8 @@
 
         <hr class="my-3">
         <div class="d-flex justify-content-end gap-2">
-            <button id="a11yReset" class="btn btn-light">Restablecer</button>
-            <button id="a11ySave" class="btn btn-primary" data-bs-dismiss="offcanvas">Guardar</button>
+            <button id="a11yReset" class="btn btn-light">Restore</button>
+            <button id="a11ySave" class="btn btn-primary" data-bs-dismiss="offcanvas">Save</button>
         </div>
     </div>
 </div>
