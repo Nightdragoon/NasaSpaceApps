@@ -1,14 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "6Saiz169jyI=",
   "success": true,
   "projectFilePath": "C:\\Users\\adany\\OneDrive\\Documentos\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj",
-=======
-  "dgSpecHash": "HDxvvYJ/CyY=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\LENOVO\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj",
->>>>>>> e29b1ecff11de7523e5d82b7e0fb09f1bf84373d
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\adany\\OneDrive\\Documentos\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
