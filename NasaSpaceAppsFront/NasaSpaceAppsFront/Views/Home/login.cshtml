@@ -34,8 +34,8 @@
                 <div class="input-field mb-3">
                     <label class="label form-label" for="email">Email</label>
                     <div class="input">
-                        <input id="email" name="email" type="email"
-                               class="value form-control" placeholder="you@example.com" required />
+                        <input id="email" name="email"
+                               class="value form-control" placeholder="usuario" required />
                     </div>
                     <span class="error small text-danger" role="alert"></span>
                 </div>
@@ -66,3 +66,102 @@
     </div>
 
 </section>
+
+@section Scripts {
+<script>
+    const urlHome = '@Url.Action("Index")';
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector(".form-login");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+
+    // Span de error, asegúrate que existe justo después del input
+    const emailError = emailInput.nextElementSibling;
+    const passwordError = passwordInput.nextElementSibling;
+
+    function showError(input, span, message) {
+        if(span){
+            span.textContent = message;
+            span.style.opacity = 0;
+            span.style.transition = "opacity 0.3s ease-in-out";
+            setTimeout(() => { span.style.opacity = 1; }, 50);
+        }
+        input.classList.add("is-invalid");
+        input.classList.remove("is-valid");
+    }
+
+    function clearError(input, span) {
+        if(span){
+            span.textContent = "";
+            span.style.opacity = 0;
+        }
+        input.classList.remove("is-invalid");
+        input.classList.remove("is-valid");
+    }
+
+    function showSuccess(input) {
+        input.classList.add("is-valid");
+        input.classList.remove("is-invalid");
+    }
+
+    form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        clearError(emailInput, emailError);
+        clearError(passwordInput, passwordError);
+
+        const usuario = emailInput.value.trim();
+        const contraseña = passwordInput.value.trim();
+        let hasError = false;
+
+        if (!usuario) {
+            showError(emailInput, emailError, "Por favor ingresa tu usuario.");
+            hasError = true;
+        }
+
+        if (!contraseña) {
+            showError(passwordInput, passwordError, "Por favor ingresa tu contraseña.");
+            hasError = true;
+        }
+
+        if (hasError) return;
+
+        try {
+            const response = await fetch("http://localhost:8000/verifyuser", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({usuario: usuario,
+                    contrasena : contraseña })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                if (data.message === "Aqui se dirige al menu principal") {
+                    // Login correcto, muestra palomitas en ambos campos
+                    showSuccess(emailInput);
+                    showSuccess(passwordInput);
+                    // Redirigir al menú principal después de 500ms
+                    setTimeout(() => {
+                        window.location.href = urlHome+"?id=" + data.id;
+                    }, 500);
+                } else {
+                    // Login incorrecto, muestra error y elimina palomitas
+                    showError(passwordInput, passwordError, data.message);
+                }
+            } else {
+                const msg = data.detail || "No se pudo conectar con el servidor";
+                showError(passwordInput, passwordError, msg);
+            }
+
+        } catch (error) {
+            console.error(error);
+            showError(passwordInput, passwordError, "Ocurrió un error al conectar con el servidor");
+        }
+    });
+});
+</script>
+}
+

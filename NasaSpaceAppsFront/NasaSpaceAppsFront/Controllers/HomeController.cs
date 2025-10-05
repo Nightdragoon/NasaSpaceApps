@@ -13,8 +13,9 @@ namespace NasaSpaceAppsFront.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? id)
         {
+            ViewBag.id = id;
             return View();
         }
 
