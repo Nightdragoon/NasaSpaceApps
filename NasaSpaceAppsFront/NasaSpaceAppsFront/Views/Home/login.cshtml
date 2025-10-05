@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (response.ok) {
                 if (data.message === "Aqui se dirige al menu principal") {
                     // Redirige al menú principal con id del usuario
-                    window.location.href = "/Home/MenuPrincipal?id=" + data.id;
+                    window.location.href = "/Home/Index?id=" + data.id;
                 } else {
                     // Muestra error debajo del password
                     showError(passwordInput, passwordError, data.message);
