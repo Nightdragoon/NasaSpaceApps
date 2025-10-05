@@ -90,17 +90,13 @@ async def root():
 
 @app.post("/registeruser")
 async def register_user(usuario: Usuario):
-    stmt = select(Base.classes.Usuarios).where(Base.classes.Usuarios.usuario == usuario.usuario)
+    stmt = insert(Base.classes.Usuarios).values(contraseña=usuario.contrasena, usuario=usuario.usuario)
     with engine.connect() as connection:
-        result = connection.execute(stmt).first()
+        conexion = connection.execute(stmt)
+        connection.commit()
 
-        if result:
-            return {"message": "Usuario ya existe"}
-        else:
-            ins = insert(Base.classes.Usuarios).values(usuario=usuario.usuario, contraseña=usuario.contraseña)
-            connection.execute(ins)
-            connection.commit()
-            return {"message": "Usuario registrado exitosamente"}
+
+    return {"message": "Usuario registrado exitosamente"}
 
 
 @app.post("/verifyuser")

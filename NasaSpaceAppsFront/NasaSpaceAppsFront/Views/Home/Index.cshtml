@@ -86,10 +86,21 @@
             const et = document.getElementById("busqueda");
             let plantilla = '';
             json.resultados.forEach(function(data){
-                plantilla += '<li class="list-group-item bg-transparent text-white">' + data + '</li>'
+                plantilla += '<li class="list-group-item bg-transparent text-white"><button class=" btn btn-outline-light w-100 text-white buttonResult py-2" data-title="' +data + '" type="button">' + data + '</button></li>'
             });
             et.innerHTML = plantilla;
 
+        });
+
+        $(".buttonResult").on("click" , async function(){
+            console.log("hola")
+            let data = $(this).data("title");
+            console.log(data);
+            $("#search").val(data);
+        });
+         $('#busqueda').on('click', '.buttonResult', function () {
+            const title = $(this).data('title');
+            $('#search').val(title); // opcional: dispara nueva búsqueda
         });
     </script>
 }
