@@ -27,9 +27,6 @@ from openai import OpenAI
 import json
 
 
-client = OpenAI()
-
-
 app = FastAPI()
 
 engine = create_engine("mysql+pymysql://udxujdjuoiegl6tz:NZ6xcIlGvn44sd4zb5T@bzths6jyaksc7qfl8qpg-mysql.services.clever-cloud.com:20620/bzths6jyaksc7qfl8qpg")
