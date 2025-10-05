@@ -59,12 +59,17 @@
                 <button class="btn btn-outline-success" type="submit">Search</button>
         </div>
     </nav>
+    <ul class="list-group bg-transparent" id="busqueda">
+        
+    </ul>
+
     <img src="~/fondo.png" alt="" class="hero-bottom-img w-100">
 
 
   </section>
   
 
+<<<<<<< Updated upstream
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.js"></script>
@@ -80,3 +85,40 @@
   }
 </style>
 </html>
+=======
+@section Scripts{
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.js"></script>
+
+    <!-- Controlador -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $('#search').on('input change',async function (){
+            let res = await fetch("http://127.0.0.1:8000/enterdata", {
+                method: "POST",
+                headers: {
+                  'Content-Type': 'application/json',
+                  'accept' : 'application/json'// Indica que estás enviando JSON
+                  },
+                 body:JSON.stringify({
+                     palabra:$("#search").val()
+                 })
+            });
+            let json = await res.json();
+            const el = document.getElementById('busqueda');
+            let plantilla = ""
+            json.resultados.forEach(function(data){
+                plantilla += '<li class="list-group-item bg-transparent text-white"> <button class="bg-transparent" data->' + data +'</button></li>';
+            });
+            console.log($("#search").val());
+                
+            
+            el.innerHTML = plantilla;
+
+
+        });
+    </script>
+}
+
+>>>>>>> Stashed changes

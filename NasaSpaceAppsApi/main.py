@@ -212,7 +212,11 @@ async def generar_resumen(articulo: Articulo):
 async def enter_data(  entradadatos: EntradaDatos):
 
     datos = [ p for p in titulos if p.startswith(entradadatos.palabra)]
-    return Reultados(datos)
+    if(entradadatos.palabra != None or entradadatos.palabra == ""):
+
+        return Reultados(datos)
+    else:
+        return Reultados([])
 
 
 @app.post("/busqueda")
