@@ -1,3 +1,8 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
 <!-- LOGIN PAGE -->
 <section class="login-page position-relative min-vh-100 overflow-hidden">
 
@@ -17,36 +22,47 @@
   </header>
 
   <!-- Formulario -->
-  <form class="form-login" method="post" action="/Account/Login">
-    <!-- Input 1 -->
-    <div class="input-field">
-      <label class="label" for="email">Email</label>
-      <span class="description" aria-hidden="true"></span>
-      <div class="input">
-        <input id="email" name="email" type="email" class="value" placeholder="you@example.com" required />
-      </div>
-      <span class="error" role="alert"></span>
+    <!-- Contenedor pantalla completa -->
+    <div class="container min-vh-100 d-flex align-items-center justify-content-center">
+
+        <!-- Ancho responsivo -->
+        <div class="col-11 col-sm-8 col-md-6 col-lg-4">
+
+            <form class="form-login bg-white p-4 p-md-5 rounded-4 shadow">
+
+                <!-- Input 1 -->
+                <div class="input-field mb-3">
+                    <label class="label form-label" for="email">Email</label>
+                    <div class="input">
+                        <input id="email" name="email" type="email"
+                               class="value form-control" placeholder="you@example.com" required />
+                    </div>
+                    <span class="error small text-danger" role="alert"></span>
+                </div>
+
+                <!-- Input 2 -->
+                <div class="input-field mb-4">
+                    <label class="label form-label" for="password">Password</label>
+                    <div class="input">
+                        <input id="password" name="password" type="password"
+                               class="value form-control" placeholder="••••••••" required />
+                    </div>
+                    <span class="error small text-danger" role="alert"></span>
+                </div>
+
+                <!-- Botón -->
+                <div class="button-group d-grid mb-3">
+                    <button type="submit" class="button btn btn-primary">Sign in</button>
+                </div>
+
+                <!-- Enlace -->
+                <div class="text-link text-center">
+                    <a class="text-link__a" href="/Account/ForgotPassword">Forgot password?</a>
+                </div>
+
+            </form>
+
+        </div>
     </div>
 
-    <!-- Input 2 -->
-    <div class="input-field">
-      <label class="label" for="password">Password</label>
-      <span class="description" aria-hidden="true"></span>
-      <div class="input">
-        <input id="password" name="password" type="password" class="value" placeholder="••••••••" required />
-      </div>
-      <span class="error" role="alert"></span>
-    </div>
-
-    <!-- Botón -->
-    <div class="button-group">
-      <!-- (si usaras un botón secundario, va aquí con la clase .button--secondary) -->
-      <button type="submit" class="button">Sign in</button>
-    </div>
-
-    <!-- Enlace (por ejemplo: olvidar contraseña) -->
-    <div class="text-link">
-      <a class="text-link__a" href="/Account/ForgotPassword">Forgot password?</a>
-    </div>
-  </form>
 </section>
