@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NasaSpaceAppsFront")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+496d326c4b0d0250201675061cbbc5b245915884")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50383d5f1533b9293f6a400450d2d90c01725e14")]
 [assembly: System.Reflection.AssemblyProductAttribute("NasaSpaceAppsFront")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NasaSpaceAppsFront")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
