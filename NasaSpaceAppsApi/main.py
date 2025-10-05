@@ -204,11 +204,51 @@ async def generar_resumen(articulo: Articulo):
 
 
 
-@app.post("/enterdata")
-async def enter_data(  entradadatos: EntradaDatos):
+# @app.post("/enterdata")
+# async def enter_data(  entradadatos: EntradaDatos):
 
-    datos = [ p for p in titulos if p.startswith(entradadatos.palabra)]
-    return Reultados(datos)
+#     datos = [ p for p in titulos if p.startswith(entradadatos.palabra)]
+#     return Reultados(datos)
+
+
+# @app.post("/busqueda")
+# async def busqueda(busqueda: BusquedaEntrada):
+#     buscar = Busqueda()
+#     buscar.titulo = ""
+#     buscar.url = ""
+#     for j in range(0 , len(titulos) -1):
+#         if titulos[j] == busqueda.titulo:
+#             buscar.titulo = titulos[j]
+#             buscar.url = links[j]
+#     return buscar
+
+from rapidfuzz import fuzz  # fpara coincidencia aproximada
+
+@app.post("/enterdata")
+async def enter_data(entradadatos: EntradaDatos):
+    palabra = entradadatos.palabra.lower().strip()
+    resultados = []
+
+    # Definir un umbral de similitud (0 a 100)
+    UMBRAL = 60  # puedes subir a 70 o bajar a 50 según quieras más o menos tolerancia
+
+    for titulo, url in zip(titulos, links):
+        similitud = fuzz.partial_ratio(palabra, titulo.lower())
+        if similitud >= UMBRAL:
+            resultados.append({
+                "titulo": titulo
+            })
+            # resultados.append({
+            #     "titulo": titulo,
+            #     "url": url,
+            #     "coincidencia": similitud
+            # })
+
+    # Ordenar por similitud (más parecidos primero)
+    resultados.sort(key=lambda x: x["coincidencia"], reverse=True)
+    Reultados(resultados)
+    # return {"resultados": resultados}
+
 
 
 @app.post("/busqueda")
@@ -221,6 +261,17 @@ async def busqueda(busqueda: BusquedaEntrada):
             buscar.titulo = titulos[j]
             buscar.url = links[j]
     return buscar
+
+
+
+
+
+
+
+
+
+
+
 
 
 
