@@ -34,9 +34,12 @@
 
       <div class="d-flex">
         <!-- IDs + href de respaldo -->
-            <a id="btnLoginNav" class="btn  btn-outline-light rounded-pill mx-1" asp-action="login">Login</a>
-            <a id="btnRegisterNav" class="btn  btn-outline-light rounded-pill mx-1" asp-action="singUp">Sign Up</a>
-      </div>
+            @if(ViewBag.id == null)
+            {
+                <a id="btnLoginNav" class="btn  btn-outline-light rounded-pill mx-1" asp-action="login">Login</a>
+                <a id="btnRegisterNav" class="btn  btn-outline-light rounded-pill mx-1" asp-action="singUp">Sign Up</a>
+            }
+        </div>
     </div>
   </nav>
 
@@ -50,7 +53,7 @@
     <nav class="navbar bg-transparent ">
         <div class="container-fluid d-flex flex-nowrap align-items-center gap-2 w-100">
             <input class="form-control me-2 col-lg-12 text-white bg-black" type="search" placeholder="Search" id="search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-success" id="searchButton"type="submit">Search</button>
         </div>
     </nav>
     <ul class="list-group bg-transparent" id="busqueda">
@@ -71,6 +74,9 @@
     <!-- Controlador -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
+
+
+
         $('#search').on('input change',async function (){
             let res = await fetch("http://127.0.0.1:8000/enterdata", {
                 method: "POST",
@@ -102,6 +108,28 @@
             const title = $(this).data('title');
             $('#search').val(title); // opcional: dispara nueva búsqueda
         });
+
+       
     </script>
+    @if (ViewBag.id != null)
+    {
+        <script>
+                $('#searchButton').on('click' , async function(){
+                let res = await fetch('http://127.0.0.1:8000/insertarHistorial' , {
+                    method: "POST",
+                    headers: {
+                      'Content-Type': 'application/json',
+                      'accept' : 'application/json'// Indica que estás enviando JSON
+                      },
+                    body: JSON.stringify({
+                        id_usuario: @ViewBag.id,
+                        titulo: $('#search').val(),
+                        url: "nsql"
+                    })
+                });
+
+            });
+        </script>
+    }
 }
 
