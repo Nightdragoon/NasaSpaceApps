@@ -66,3 +66,94 @@
     </div>
 
 </section>
+
+@section Scripts {
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector(".form-login");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const emailError = emailInput.nextElementSibling;
+    const passwordError = passwordInput.nextElementSibling;
+
+    function showError(input, span, message) {
+        span.textContent = message;
+        span.style.opacity = 0;
+        span.style.transition = "opacity 0.3s ease-in-out";
+        input.classList.add("is-invalid"); // resalta borde rojo
+        setTimeout(() => {
+            span.style.opacity = 1;
+        }, 50);
+    }
+
+    function clearError(input, span) {
+        span.textContent = "";
+        span.style.opacity = 0;
+        input.classList.remove("is-invalid");
+        input.classList.remove("is-valid");
+    }
+
+    function showSuccess(input) {
+        input.classList.add("is-valid"); // resalta borde verde
+        input.classList.remove("is-invalid");
+    }
+
+    form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        // Limpiar errores previos
+        clearError(emailInput, emailError);
+        clearError(passwordInput, passwordError);
+
+        const usuario = emailInput.value.trim();
+        const contraseña = passwordInput.value.trim();
+        let hasError = false;
+
+        if (!usuario) {
+            showError(emailInput, emailError, "Por favor ingresa tu usuario.");
+            hasError = true;
+        } else {
+            showSuccess(emailInput);
+        }
+
+        if (!contraseña) {
+            showError(passwordInput, passwordError, "Por favor ingresa tu contraseña.");
+            hasError = true;
+        } else {
+            showSuccess(passwordInput);
+        }
+
+        if (hasError) return;
+
+        try {
+            const response = await fetch("http://127.0.0.1:8000/verifyuser", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ usuario, contraseña })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                if (data.message === "Aqui se dirige al menu principal") {
+                    // Redirige al menú principal con id del usuario
+                    window.location.href = "/Home/MenuPrincipal?id=" + data.id;
+                } else {
+                    // Muestra error debajo del password
+                    showError(passwordInput, passwordError, data.message);
+                }
+            } else {
+                const msg = data.detail || "No se pudo conectar con el servidor";
+                showError(passwordInput, passwordError, msg);
+            }
+
+        } catch (error) {
+            console.error(error);
+            showError(passwordInput, passwordError, "Ocurrió un error al conectar con el servidor");
+        }
+    });
+});
+</script>
+}
