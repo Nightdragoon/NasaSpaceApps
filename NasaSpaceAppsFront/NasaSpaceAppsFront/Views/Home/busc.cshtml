@@ -196,14 +196,31 @@
                         <span class="text-muted">(Sin URL)</span>
                     }
                 </div>
-
-                <!-- Carrusel de datos curiosos (se muestra solo si hay elementos) -->
                 @if (Model?.DatosCuriosos != null && Model.DatosCuriosos.Any())
                 {
+                    <style>
+                        #factsCarousel .carousel-item {
+                            display: none;
+                        }
+
+                        #factsCarousel .carousel-item.active {
+                            display: block;
+                        }
+
+                }       #factsCarousel .carousel-inner {
+                            position: relative;
+                        }
+
+                        #factsCarousel .carousel-item {
+                            position: relative;
+                            transition: none !important;
+                        }
+                    </style>
+
                     <div class="panel mt-4">
                         <div class="section-title">Datos curiosos</div>
 
-                        <div id="factsCarousel" class="carousel slide carousel-dark" data-bs-ride="false">
+                        <div id="factsCarousel" class="carousel slide carousel-dark" data-bs-ride="false" data-bs-interval="false">
                             <div class="carousel-inner">
                                 @{
                                     var index = 0;
@@ -216,7 +233,6 @@
                                                 @fact
                                             </div>
                                         </div>
-                                        ;
                                         index++;
                                     }
                                 }
@@ -232,6 +248,7 @@
                         </div>
                     </div>
                 }
+
 
             </div>
         </div>
