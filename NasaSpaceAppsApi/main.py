@@ -7,11 +7,14 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine , select , insert , delete, update
 from ClasesApi.BusquedaEntrada import BusquedaEntrada
 from ClasesApi.EntradaDatos import EntradaDatos
+from ClasesApi.EntradasDescripcion import EntradasDescripcion
 from ClasesApi.Resultados import Reultados
 from ClasesApi.Busqueda import Busqueda
 from ClasesApi.Usuario import Usuario
 from ClasesApi.Historial import Historial
 from ClasesApi.HistorialEntrada import HistorialEntrada
+from ClasesApi.Descripcion import  Descripcion
+from openai import OpenAI
 
 
 
@@ -23,12 +26,32 @@ Base = automap_base()
 
 Base.prepare(engine, reflect=True)
 
+firstatement = select(Base.classes.APIKEY)
+api_key = ""
+with engine.connect() as connection:
+    for row in connection.execute(firstatement):
+        api_key = row.api
+
+client =  OpenAI(api_key=api_key)
 data = pd.read_csv("SB_publication_PMC.csv")
 
 titulos = data.Title.values.tolist()
 links = data.Link.values.tolist()
 
 app = FastAPI()
+
+
+@app.post("/descripcion")
+async def descripcion(descripcion: EntradasDescripcion):
+    titulo = descripcion.titulo
+    url = descripcion.url
+    response = client.responses.create(
+        model="gpt-5",
+        input="entra al link " + descripcion.url + " y quiero que me hagas una descripcion del articulo solo y unicamente la descripcion  del ariticulo , esta descripcion es creada por ti  no me respondas ni me saludes , solo crea la lee el articulo y crae una corta descripcion"
+    )
+    return Descripcion(titulo=titulo, url=url , descripcion=response.output_text)
+
+
 
 @app.get("/")
 async def root():
