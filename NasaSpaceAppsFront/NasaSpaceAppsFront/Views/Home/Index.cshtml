@@ -33,66 +33,35 @@
       </a>
 
       <div class="d-flex">
-<<<<<<< HEAD
         <!-- IDs + href de respaldo -->
-        <a id="btnLoginNav"    class="btn btn-sm btn-outline-light mx-1" href="login.cshtml">Login</a>
-        <a id="btnRegisterNav" class="btn btn-sm btn-outline-light mx-1" href="signup.cshtml">Sign Up</a>
+            <a id="btnLoginNav" class="btn  btn-outline-light rounded-pill mx-1" asp-action="login">Login</a>
+            <a id="btnRegisterNav" class="btn  btn-outline-light rounded-pill mx-1" asp-action="singUp">Sign Up</a>
       </div>
     </div>
   </nav>
 
-  <!-- Barra de búsqueda -->
-  <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-      <!-- GET hacia results.html; ids para JS -->
-      <form id="searchForm" class="d-flex" role="search" method="get" action="results.html">
-        <input id="searchInput" class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search"/>
-        <button id="btnSearch" class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
 
-=======
-            <a class="btn  btn-outline-light rounded-pill mx-1" asp-action="login">Login</a>
-        <a class="btn  btn-outline-light mx-1 rounded-pill " asp-action="singUp">Sign Up</a>
-      </div> 
-    </div>
-  </nav>
 
->>>>>>> 7b55426641edebb5c3b225cc149ecf15f8367320
   <!-- Contenido principal -->
-  <section class="d-flex flex-column justify-content-center align-items-center text-center text-white ">
+<section class="d-flex flex-column justify-content-center align-items-center text-center text-white ">
     <h1 class="display-1 fw-bold mb-3">WELCOME</h1>
     <p class="lead mb-5">“From cells to stars — discover how life adapts beyond Earth.”</p>
 
     <nav class="navbar bg-transparent ">
         <div class="container-fluid d-flex flex-nowrap align-items-center gap-2 w-100">
-                <input class="form-control me-2 col-lg-12 text-white bg-black" type="search" placeholder="Search" id="search" aria-label="Search" />
-                <button class="btn btn-outline-success" type="submit">Search</button>
+            <input class="form-control me-2 col-lg-12 text-white bg-black" type="search" placeholder="Search" id="search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
         </div>
     </nav>
-    <img src="~/fondo.png" alt="" class="hero-bottom-img w-100">
+    <ul class="list-group bg-transparent" id="busqueda">
+    </ul>
+
+    <img src="/fondo.png" alt="" class="hero-bottom-img w-100">
 
 
-  </section>
-  
-<<<<<<< HEAD
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.js"></script>
-  
-  <!-- Controlador -->
-  <script src="assets/js/controller.js"></script>
-</body>
-<style>
-  html, body { height: 100%; margin: 0; }
-  body {
-    background-color: #0B1226;
-    background-image: linear-gradient(180deg, #0B1226, #1E3259);
-  }
-</style>
-</html>
-=======
+</section>
+
+
 
 @section Scripts{
     <!-- Bootstrap JS -->
@@ -120,4 +89,3 @@
     </script>
 }
 
->>>>>>> 7b55426641edebb5c3b225cc149ecf15f8367320
