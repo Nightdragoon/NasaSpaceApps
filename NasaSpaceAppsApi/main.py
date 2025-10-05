@@ -198,11 +198,42 @@ async def generar_resumen(articulo: Articulo):
 
 
 
-@app.post("/enterdata")
-async def enter_data(  entradadatos: EntradaDatos):
+# @app.post("/enterdata")
+# async def enter_data(  entradadatos: EntradaDatos):
 
-    datos = [ p for p in titulos if p.startswith(entradadatos.palabra)]
-    return Reultados(datos)
+#     datos = [ p for p in titulos if p.startswith(entradadatos.palabra)]
+#     return Reultados(datos)
+
+
+
+
+
+from rapidfuzz import fuzz  # fpara coincidencia aproximada
+data = pd.read_csv("SB_publication_PMC.csv")  # columnas: Title, Link
+titulos = data.Title.values.tolist()
+links = data.Link.values.tolist()
+@app.post("/enterdata")
+async def enter_data(entradadatos: EntradaDatos):
+    palabra = entradadatos.palabra.lower().strip()
+    resultados = []
+
+    # Definir un umbral de similitud (0 a 100)
+    UMBRAL = 60  # puedes subir a 70 o bajar a 50 según quieras más o menos tolerancia
+
+    for titulo, url in zip(titulos, links):
+        similitud = fuzz.partial_ratio(palabra, titulo.lower())
+        if similitud >= UMBRAL:
+            resultados.append({
+                "titulo": titulo,
+                "url": url,
+                "coincidencia": similitud
+            })
+
+    # Ordenar por similitud (más parecidos primero)
+    resultados.sort(key=lambda x: x["coincidencia"], reverse=True)
+
+    return {"resultados": resultados}
+
 
 
 @app.post("/busqueda")
