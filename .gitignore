@@ -16,3 +16,4 @@ ClasesApi/__pycache
 venv/
 .env/
 .env.*/
+/NasaSpaceAppsFront/.vs/NasaSpaceAppsFront

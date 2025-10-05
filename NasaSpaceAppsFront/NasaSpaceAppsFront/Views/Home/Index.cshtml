@@ -83,7 +83,12 @@
                  })
             });
             let json = await res.json();
-            console.log(json);
+            const et = document.getElementById("busqueda");
+            let plantilla = '';
+            json.resultados.forEach(function(data){
+                plantilla += '<li class="list-group-item bg-transparent text-white">' + data + '</li>'
+            });
+            et.innerHTML = plantilla;
 
         });
     </script>
