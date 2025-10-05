@@ -1,0 +1,52 @@
+<!-- LOGIN PAGE -->
+<section class="login-page position-relative min-vh-100 overflow-hidden">
+
+  <!-- Fondo: foto con opacidad -->
+  <div class="bg-photo"></div>
+
+  <!-- Rectángulos con gradiente (puedes dejar uno si es duplicado) -->
+  <div class="rect-1"></div>
+  <div class="rect-3"></div>
+
+  <!-- Encabezado (logo + título) -->
+  <header class="login-header">
+    <img class="brand-logo"
+         src="/img/Captura_de_pantalla_2025-10-04_130505-removebg-preview.png"
+         alt="Logo" />
+    <h1 class="login-title">Log In</h1>
+  </header>
+
+  <!-- Formulario -->
+  <form class="form-login" method="post" action="/Account/Login">
+    <!-- Input 1 -->
+    <div class="input-field">
+      <label class="label" for="email">Email</label>
+      <span class="description" aria-hidden="true"></span>
+      <div class="input">
+        <input id="email" name="email" type="email" class="value" placeholder="you@example.com" required />
+      </div>
+      <span class="error" role="alert"></span>
+    </div>
+
+    <!-- Input 2 -->
+    <div class="input-field">
+      <label class="label" for="password">Password</label>
+      <span class="description" aria-hidden="true"></span>
+      <div class="input">
+        <input id="password" name="password" type="password" class="value" placeholder="••••••••" required />
+      </div>
+      <span class="error" role="alert"></span>
+    </div>
+
+    <!-- Botón -->
+    <div class="button-group">
+      <!-- (si usaras un botón secundario, va aquí con la clase .button--secondary) -->
+      <button type="submit" class="button">Sign in</button>
+    </div>
+
+    <!-- Enlace (por ejemplo: olvidar contraseña) -->
+    <div class="text-link">
+      <a class="text-link__a" href="/Account/ForgotPassword">Forgot password?</a>
+    </div>
+  </form>
+</section>
