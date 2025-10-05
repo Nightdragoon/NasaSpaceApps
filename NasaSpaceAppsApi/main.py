@@ -11,7 +11,6 @@ from ClasesApi.Resultados import Reultados
 from ClasesApi.Busqueda import Busqueda
 from ClasesApi.Usuario import Usuario
 from ClasesApi.Historial import Historial
-from ClasesApi.HistorialEntrada import HistorialEntrada
 
 
 
@@ -43,10 +42,11 @@ async def register_user(usuario: Usuario):
         if result:
             return {"message": "Usuario ya existe"}
         else:
-            ins = insert(Base.classes.Usuarios).values(usuario=usuario.usuario, contraseña=usuario.contraseña)
+            ins = insert(Base.classes.Usuarios).values(usuario=usuario.usuario, contraseña=usuario.contraseña,edad=usuario.edad,sexo=usuario.sexo, id_ocupacion=usuario.id_ocupacion)
             connection.execute(ins)
             connection.commit()
             return {"message": "Usuario registrado exitosamente"}
+
 
 
 @app.post("/verifyuser")
@@ -60,16 +60,11 @@ async def verify_user(usuario: Usuario):
         else:
             return {"message": "Datos incorrectos"}
             return{ "Message": "Aqui se dirige de nuevo al login"}
+        
 
 
-@app.post("/insertarHistorial")
-async def insertarHistorial(historial: HistorialEntrada):
-    stmt = insert(Base.classes.Historial).values(id_usuario=historial.id_usuario , titulo=historial.titulo, url=historial.url)
-    with engine.connect() as connection:
-        conexion = connection.execute(stmt)
-        connection.commit()
-    return {"ok":"ok"}
-  
+
+
 @app.get("/historial")
 async def historial(id:int):
     historial = []
@@ -105,10 +100,12 @@ async def prueba():
 
 
 @app.post("/enterdata")
-async def enter_data(  entradadatos: EntradaDatos):
+def enter_data(  entradadatos: EntradaDatos):
 
     datos = [ p for p in titulos if p.startswith(entradadatos.palabra)]
+
     return Reultados(datos)
+
 
 
 @app.post("/busqueda")
