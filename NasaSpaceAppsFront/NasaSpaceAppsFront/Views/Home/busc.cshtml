@@ -1,73 +1,257 @@
 ﻿@model ArticuloModelFinal
 @{
-    ViewData["Title"] = "Articulos";
+    ViewData["Title"] = "Artículos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section Styles {
     <style>
+        :root {
+            --bg: #0B1226;
+            --bg2: #1E3259;
+            --panel: #121c3a;
+            --panel2: #162248;
+            --text: #EAF0FF;
+            --muted: #A8B3D9;
+            --accent: #4DA3FF;
+            --border: rgba(255,255,255,.10);
+            --radius: 18px;
+        }
+
         html, body {
             height: 100%;
-            margin: 0;
         }
 
         body {
-            background-color: #0B1226;
-            background-image: linear-gradient(180deg, #0B1226, #1E3259);
+            margin: 0;
+            background: linear-gradient(180deg,var(--bg),var(--bg2));
+            color: var(--text);
         }
 
+        /* Fondo decorativo igual a tus páginas */
+        .bg-photo, .rect-1, .rect-3 {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .bg-photo {
+            background: radial-gradient(1200px 600px at 20% -10%, rgba(21,36,77,.7) 0%, transparent 60%);
+        }
+
+        .rect-1 {
+            background: radial-gradient(900px 500px at 85% 10%, rgba(77,163,255,.08) 0%, transparent 60%);
+        }
+
+        .rect-3 {
+            background: radial-gradient(700px 400px at 10% 80%, rgba(255,255,255,.06) 0%, transparent 60%);
+        }
+
+        .article-wrap {
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-logo {
+            height: 48px;
+            opacity: .95;
+        }
+
+        /* Paneles */
+        .panel {
+            background: linear-gradient(180deg,var(--panel),var(--panel2));
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.25rem;
+        }
+
+            .panel + .panel {
+                margin-top: .9rem;
+            }
+
+        .section-title {
+            font-size: .9rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: .25rem;
+        }
+
+        /* El título del artículo (sin “encabezado/label”) */
+        .article-title {
+            font-weight: 800;
+            letter-spacing: .02em;
+            font-size: clamp(2rem, 5vw, 3.25rem);
+            line-height: 1.08;
+            margin: 0 0 .25rem 0;
+        }
+
+        .content-text {
+            color: var(--text);
+            opacity: .95;
+            white-space: pre-wrap; /* respeta saltos de línea de la IA */
+        }
+
+        /* CTA del enlace */
+        .cta-link {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            background: linear-gradient(135deg,#1f7fff,#48b5ff);
+            color: #04122b;
+            font-weight: 700;
+            border: 0;
+            border-radius: 999px;
+            padding: .9rem 1.2rem;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(77,163,255,.25);
+        }
+
+            .cta-link:hover {
+                filter: brightness(1.05);
+                color: #04122b;
+            }
+
+        /* Carrusel */
+        .carousel-dark .carousel-item {
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fact-card {
+            background: rgba(255,255,255,.04);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1rem 1.25rem;
+            color: var(--text);
+            max-width: 860px;
+        }
+
+        .fact-bullet {
+            color: var(--accent);
+            margin-right: .45rem;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1) grayscale(1);
+        }
     </style>
-
-
 }
-<section class="login-page position-relative min-vh-100 overflow-hidden">
+
+<section class="position-relative min-vh-100 overflow-hidden">
     <div class="bg-photo"></div>
     <div class="rect-1"></div>
     <div class="rect-3"></div>
 
-    <div class="container-fluid py-5">
+    <div class="container-xxl py-5 article-wrap">
         <div class="row justify-content-center">
-            <div class="col-11 col-md-10 col-lg-9 col-xl-8">
+            <div class="col-11 col-lg-10 col-xxl-8">
 
-                <div class="form-login bg-white p-5 rounded-4 shadow-lg">
-                    <div class="mb-5 text-center">
-                        <img class="brand-logo mb-3" src="/img/Captura_de_pantalla_2025-10-04_130505-removebg-preview.png" alt="Logo" />
-                    </div>
+                <!-- Logo (opcional) -->
+                <div class="mb-4 text-center">
+                    <img class="brand-logo" src="~/img/Captura_de_pantalla_2025-10-04_130505-removebg-preview.png" alt="Logo SpaceBioLab" />
+                </div>
 
-                    <div class="mb-4">
-                        <label class="form-label fw-bold fs-4 text-dark" for="titulo">Título</label>
-                        <input id="titulo" name="titulo" class="form-control form-control-lg fw-semibold text-dark" readonly value="@Model.titulo" />
-                    </div>
+                <!-- Título del artículo (SIN label) -->
+                <div class="text-center mb-4">
+                    <h1 class="article-title">@Model.titulo</h1>
+                    @* Subtítulo opcional: <div class="text-muted">Tema / categoría</div> *@
+                </div>
 
+                <!-- Introducción -->
+                <div class="panel">
+                    <div class="section-title">Introducción</div>
+                    <div class="content-text">@Model.introduccion_contexto</div>
+                </div>
 
-                    <div class="mb-4">
-                        <label class="form-label fw-bold fs-4 text-dark" for="descripcion">Descripción</label>
-                        <textarea id="descripcion" name="descripcion"  rows="8" class="form-control form-control-lg fw-semibold text-dark" readonly() >@Model.desarrollo</textarea>
-                    </div
+                <!-- Hallazgos -->
+                <div class="panel">
+                    <div class="section-title">Hallazgos</div>
+                    <div class="content-text">@Model.hallazgos_clave</div>
+                </div>
 
-                    <div class="mb-4">
-                        <label class="form-label fw-bold fs-4 text-dark" for="intro">Introduccion</label>
-                        <textarea id="intro" name="intro" rows="8" class="form-control form-control-lg fw-semibold text-dark" readonly >@Model.introduccion_contexto</textarea>
-                    </div>
-                    <div class="mb-4">
-                        <label class="form-label fw-bold fs-4 text-white" for="hallazgos">Descripción</label>
-                        <textarea id="hallazgos" name="hallazgos"  rows="8" class="form-control form-control-lg fw-semibold text-dark" readonly >@Model.hallazgos_clave</textarea>
-                    </div>
-                    <div class="mb-4">
-                        <label class="form-label fw-bold fs-4 text-white" for="conclusiones">Conclusiones</label>
-                        <textarea id="conclusiones" name="conclusiones" values="@Model.conclusion_implicaciones" rows="8" class="form-control form-control-lg fw-semibold text-dark" readonly() >@Model.conclusion_implicaciones</textarea>
-                    </div>
+                <!-- Conclusión -->
+                <div class="panel">
+                    <div class="section-title">Conclusión</div>
+                    <div class="content-text">@Model.conclusion_implicaciones</div>
+                </div>
 
-                    <div class="mt-4 text-center">
-                        <label class="form-label fw-bold fs-4 text-white">URL</label>
-                        <div>
-                            <a id="enlace" class="fs-5 fw-semibold text-primary text-decoration-underline text-break" href="@Model.url" target="_blank" rel="noopener">(Sin URL)</a>
+                <!-- Enlace destacado -->
+                <div class="text-center mt-4">
+                    @if (!string.IsNullOrWhiteSpace(Model.url))
+                    {
+                        <a class="cta-link" href="@Model.url" target="_blank" rel="noopener">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M6.364 13.657a4 4 0 0 1 0-5.657l2.122-2.121a4 4 0 1 1 5.657 5.657l-1.414 1.414a.75.75 0 1 1-1.06-1.06l1.414-1.415a2.5 2.5 0 1 0-3.536-3.535L8.536 8.4a2.5 2.5 0 0 0 0 3.536.75.75 0 1 1-1.06 1.06Z" />
+                                <path d="M9.9 12.243a4 4 0 0 1 0-5.657l1.415-1.414a.75.75 0 0 1 1.06 1.06L10.96 7.19a2.5 2.5 0 0 0 0 3.536.75.75 0 1 1-1.06 1.06Z" />
+                            </svg>
+                            Open original article
+                        </a>
+                    }
+                    else
+                    {
+                        <span class="text-muted">(Sin URL)</span>
+                    }
+                </div>
+
+                <!-- Carrusel de datos curiosos (se muestra solo si hay elementos) -->
+                @if (Model?.DatosCuriosos != null && Model.DatosCuriosos.Any())
+                {
+                    <div class="panel mt-4">
+                        <div class="section-title">Datos curiosos</div>
+
+                        <div id="factsCarousel" class="carousel slide carousel-dark" data-bs-ride="false">
+                            <div class="carousel-inner">
+                                @{
+                                    var index = 0;
+                                    foreach (var fact in Model.DatosCuriosos)
+                                    {
+                                        var active = index == 0 ? "active" : "";
+                                        <div class="carousel-item @active">
+                                            <div class="fact-card mx-auto">
+                                                <span class="fact-bullet">●</span>
+                                                @fact
+                                            </div>
+                                        </div>
+                                        ;
+                                        index++;
+                                    }
+                                }
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#factsCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#factsCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Siguiente</span>
+                            </button>
                         </div>
                     </div>
-
-                </div>
+                }
 
             </div>
         </div>
     </div>
 </section>
+
+@section Scripts {
+    <!-- Si tu _Layout ya incluye Bootstrap JS, no necesitas esto -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    @if(ViewBag.ciego){
+        <script>
+
+        speechSynthesis.cancel();
+        let text = "@Model.titulo + @Model.introduccion_contexto  @Model.hallazgos_clave  @Model.conclusion_implicaciones";
+        console.log(text);
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'en-EEUU';
+        u.rate = 1;
+        u.pitch = 1;
+        speechSynthesis.speak(u);
+    </script>
+    }
+}

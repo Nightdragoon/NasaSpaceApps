@@ -29,7 +29,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid px-5">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="~/helio_logo.png" alt="Logo" width="60" class="me-2">
+        <img src="~/helio_logo.png" id="labImage"alt="Logo" width="60" class="me-2">
         Helio lab
       </a>
 
@@ -59,13 +59,14 @@
 
   <!-- Contenido principal -->
 <section class="d-flex flex-column justify-content-center align-items-center text-center text-white ">
-    <h1 class="display-1 fw-bold mb-3">WELCOME</h1>
-    <p class="lead mb-5">“From cells to stars — discover how life adapts beyond Earth.”</p>
+    <h1 class="display-1 fw-bold mb-3" id="welcome">WELCOME</h1>
+    <p  id ="texto" class="lead mb-5">“From cells to stars — discover how life adapts beyond Earth.”</p>
 
     <nav class="navbar bg-transparent ">
         <div class="container-fluid d-flex flex-nowrap align-items-center gap-2 w-100">
             <form method="get" id="formulario_enviar" asp-action="busc" class=" d-flex flex-nowrap align-items-center gap-2 w-100">
              <input class="form-control me-2 col-lg-12 text-white bg-black" type="search" placeholder="Search" id="search" name="search" aria-label="Search">
+             <input type="hidden" id="chkSolo" value="false" name="ciego">
             <button class="btn btn-outline-success" id="searchButton"type="submit">Search</button>
 
             </form>
@@ -74,7 +75,7 @@
     <ul class="list-group bg-transparent" id="busqueda">
     </ul>
 
-    <img src="/fondo.png" alt="" class="hero-bottom-img w-100">
+    <img src="/fondo.png" alt="" id="imageWorld" class="hero-bottom-img w-100">
 
 
 </section>
@@ -159,12 +160,111 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
 
+        $("#texto").on("mouseenter" , function(){
+           if($('.Ciego').prop('checked')){
+           if (!('speechSynthesis' in window)) return;
+
+          speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance("text");
+          u.lang = 'en-EEUU'; u.rate = 1; u.pitch = 1;
+          speechSynthesis.speak(u);
+          }
+       }
+       );
+
+        $("#labImage").on("mouseenter" , function(){
+           if($('.Ciego').prop('checked')){
+           if (!('speechSynthesis' in window)) return;
+
+          speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance("helios");
+          u.lang = 'en-EEUU'; u.rate = 1; u.pitch = 1;
+          speechSynthesis.speak(u);
+          }
+       }
+       );
+
+         $("#btnLoginNav").on("mouseenter" , function(){
+           if($('.Ciego').prop('checked')){
+           if (!('speechSynthesis' in window)) return;
+
+          speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance("login");
+          u.lang = 'en-EEUU'; u.rate = 1; u.pitch = 1;
+          speechSynthesis.speak(u);
+          }
+       }
+       );
+
+         $("#btnRegisterNav").on("mouseenter" , function(){
+           if($('.Ciego').prop('checked')){
+           if (!('speechSynthesis' in window)) return;
+
+          speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance("signup");
+          u.lang = 'en-EEUU'; u.rate = 1; u.pitch = 1;
+          speechSynthesis.speak(u);
+          }
+       }
+       );
+
+         
 
 
+         $("#welcome").on("mouseenter" , function(){
+           if($('.Ciego').prop('checked')){
+           if (!('speechSynthesis' in window)) return;
+
+          speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance("welcome");
+          u.lang = 'en-EEUU'; u.rate = 1; u.pitch = 1;
+          speechSynthesis.speak(u);
+          }
+       }
+       );
+
+         $("#imageWorld").on("mouseenter" , function(){
+           if($('.Ciego').prop('checked')){
+           if (!('speechSynthesis' in window)) return;
+
+          speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance("image");
+          u.lang = 'en-EEUU'; u.rate = 1; u.pitch = 1;
+          speechSynthesis.speak(u);
+          }
+       }
+       );
+
+       
+
+        $("#search").on("mouseenter" , function(){
+           if($('.Ciego').prop('checked')){
+           if (!('speechSynthesis' in window)) return;
+
+          speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance("bar");
+          u.lang = 'en-EEUU'; u.rate = 1; u.pitch = 1;
+          speechSynthesis.speak(u);
+          }
+       }
+       );
+
+
+        $("#searchButton").on("mouseenter" , function(){
+           if($('.Ciego').prop('checked')){
+           if (!('speechSynthesis' in window)) return;
+
+          speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance("search");
+          u.lang = 'en-EEUU'; u.rate = 1; u.pitch = 1;
+          speechSynthesis.speak(u);
+          }
+
+        })
 
 
         $('#search').on('input change',async function (){
-            let res = await fetch("http://127.0.0.1:8000/enterdata", {
+            let res = await fetch("https://nasaspaceappsstemfesc-3ad0bcb04512.herokuapp.com/enterdata", {
                 method: "POST",
                 headers: {
                   'Content-Type': 'application/json',
@@ -204,7 +304,7 @@
 
           speechSynthesis.cancel();
           const u = new SpeechSynthesisUtterance(title);
-          u.lang = 'es-MX'; u.rate = 1; u.pitch = 1;
+          u.lang = 'en-EEUU'; u.rate = 1; u.pitch = 1;
           speechSynthesis.speak(u);
           }
 
@@ -219,7 +319,7 @@
                 $('#formulario_enviar').on('submit' , async function(e){
                     e.preventDefault();
                     const form = this;
-                let res = await fetch('http://127.0.0.1:8000/insertarHistorial' , {
+                let res = await fetch('https://nasaspaceappsstemfesc-3ad0bcb04512.herokuapp.com/insertarHistorial' , {
                     method: "POST",
                     headers: {
                       'Content-Type': 'application/json',
@@ -231,6 +331,7 @@
                         url: "nsql"
                     })
                 });
+                 $("#chkSolo").val($('.Ciego').prop('checked'));
                 form.submit();
 
             });
@@ -244,7 +345,8 @@
             $('#formulario_enviar').on('submit' , async function(e){
                  e.preventDefault();
                  const form = this;
-               
+               $("#chkSolo").val($('.Ciego').prop('checked'));
+
                 form.submit();
             });
 

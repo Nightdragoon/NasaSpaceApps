@@ -79,7 +79,7 @@ async def descripcion(descripcion: EntradasDescripcion):
     url = descripcion.url
     response = client.responses.create(
         model="gpt-5",
-        input="lee esto " + res.text + " y quiero que me hagas una descripcion del articulo solo y unicamente la descripcion  del ariticulo , esta descripcion es creada por ti  no me respondas ni me saludes , solo crea la lee el articulo y crae una corta descripcion"
+        input="lee esto " + res.text + " y quiero que me hagas una descripcion del articulo solo y unicamente la descripcion  del ariticulo , esta descripcion es creada por ti  no me respondas ni me saludes , solo crea la lee el articulo y crae una corta descripcion en ingles"
     )
     return Descripcion(titulo=titulo, url=url , descripcion=response.output_text)
 
@@ -170,7 +170,7 @@ async def generar_resumen(articulo: Articulo):
             "hallazgos_clave": "",
             "conclusion_implicaciones": ""
         }}
-        No agregues explicaciones ni texto adicional.
+        No agregues explicaciones ni texto adicional. en ingles
         """
 
         response = client.chat.completions.create(

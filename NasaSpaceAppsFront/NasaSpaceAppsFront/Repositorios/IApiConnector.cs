@@ -21,7 +21,7 @@ namespace NasaSpaceAppsFront.Repositorios
         public async Task<ArticuloModel> ArticuloCreator(ArticuloEntradaModel entrada)
         {
             var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Post, "http://127.0.0.1:8000/descripcion");
+            var request = new HttpRequestMessage(HttpMethod.Post, "https://nasaspaceappsstemfesc-3ad0bcb04512.herokuapp.com/descripcion");
             request.Headers.Add("accept", "application/json");
             request.Content = new StringContent(JsonSerializer.Serialize(entrada), Encoding.UTF8, "application/json"); ;
             var response = await client.SendAsync(request);
@@ -34,7 +34,7 @@ namespace NasaSpaceAppsFront.Repositorios
         public async Task<ArticuloViewModel> ArticuloResumen(ArticuloFinal entrada)
         {
             var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Post, "http://127.0.0.1:8000/resumen");
+            var request = new HttpRequestMessage(HttpMethod.Post, "https://nasaspaceappsstemfesc-3ad0bcb04512.herokuapp.com/resumen");
             request.Headers.Add("accept", "application/json");
             var content = new StringContent(JsonSerializer.Serialize(entrada), null, "application/json");
             request.Content = content;
@@ -49,7 +49,7 @@ namespace NasaSpaceAppsFront.Repositorios
         {
 
             var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Post, "http://127.0.0.1:8000/busqueda");
+            var request = new HttpRequestMessage(HttpMethod.Post, "https://nasaspaceappsstemfesc-3ad0bcb04512.herokuapp.com/busqueda");
             request.Headers.Add("accept", "application/json");
             var tit = new EntradaTitulo()
             {
@@ -68,7 +68,7 @@ namespace NasaSpaceAppsFront.Repositorios
         public async Task<HistorialModel> getHistorial(int id)
         {
             var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Get, "http://127.0.0.1:8000/historial?id=" + id.ToString());
+            var request = new HttpRequestMessage(HttpMethod.Get, "https://nasaspaceappsstemfesc-3ad0bcb04512.herokuapp.com/historial?id=" + id.ToString());
             request.Headers.Add("accept", "application/json");
             var response = await client.SendAsync(request);
             response.EnsureSuccessStatusCode();

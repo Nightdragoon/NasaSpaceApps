@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (hasError) return;
 
         try {
-            const response = await fetch("http://localhost:8000/verifyuser", {
+                    const response = await fetch("https://nasaspaceappsstemfesc-3ad0bcb04512.herokuapp.com/verifyuser", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({usuario: usuario,

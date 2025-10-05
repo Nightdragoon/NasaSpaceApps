@@ -8,4 +8,6 @@ public class ArticuloModelFinal
     public string conclusion_implicaciones { get; set; }
     public string desarrollo { get; set; }  
     public string url { get; set; }
-}
+
+    public List<string> DatosCuriosos { get; set; }
+    }

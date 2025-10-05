@@ -23,7 +23,9 @@ namespace NasaSpaceAppsFront.Controllers
             return View();
         }
 
-        public async Task<IActionResult> busc(string search)
+
+        [HttpGet]
+        public async Task<IActionResult> busc(string search , bool ciego)
         {
             var articulo =await  _apiConnector.EntradaDeArticulo(search);
             var modelDto = await _apiConnector.ArticuloCreator(articulo);
@@ -42,10 +44,12 @@ namespace NasaSpaceAppsFront.Controllers
                 conclusion_implicaciones = model1.conclusion_implicaciones,
                 hallazgos_clave = model1.hallazgos_clave,
                 introduccion_contexto = model1.introduccion_contexto,
-                url = articulo.url
+                url = articulo.url,
+                DatosCuriosos = ["sexo" , "porfavor"]
+
 
             };
-
+            ViewBag.ciego = ciego;
             return View(model);
         }
         public async Task<IActionResult> Historial(int id)
