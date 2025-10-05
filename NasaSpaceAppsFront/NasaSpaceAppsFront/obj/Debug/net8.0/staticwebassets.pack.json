@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\css\\login.css"
     },
     {
+      "Id": "C:\\Users\\adany\\OneDrive\\Documentos\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\wwwroot\\css\\search.css",
+      "PackagePath": "staticwebassets\\css\\search.css"
+    },
+    {
+      "Id": "C:\\Users\\adany\\OneDrive\\Documentos\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\wwwroot\\css\\signup.css",
+      "PackagePath": "staticwebassets\\css\\signup.css"
+    },
+    {
       "Id": "C:\\Users\\adany\\OneDrive\\Documentos\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -23,6 +31,10 @@
     {
       "Id": "C:\\Users\\adany\\OneDrive\\Documentos\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\adany\\OneDrive\\Documentos\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\wwwroot\\fondo.png",
+      "PackagePath": "staticwebassets\\fondo.png"
     },
     {
       "Id": "C:\\Users\\adany\\OneDrive\\Documentos\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\wwwroot\\js\\site.js",
