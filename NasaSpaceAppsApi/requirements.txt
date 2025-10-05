@@ -1,2 +1,8 @@
 uvicorn
 fastapi
+requests 
+beautifulsoup4
+openai
+pandas
+sqlalchemy
+PyMySQL
