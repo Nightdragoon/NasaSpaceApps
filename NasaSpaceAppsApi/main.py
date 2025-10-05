@@ -17,6 +17,7 @@ from ClasesApi.HistorialEntrada import HistorialEntrada
 
 from ClasesApi.Descripcion import  Descripcion
 from openai import OpenAI
+import requests
 
 from ClasesApi.ArticuloResumen import ArticuloResumen
 from ClasesApi.Articulo import Articulo
@@ -40,6 +41,7 @@ Base.prepare(engine, reflect=True)
 
 firstatement = select(Base.classes.APIKEY)
 api_key = ""
+
 with engine.connect() as connection:
     for row in connection.execute(firstatement):
         api_key = row.api
@@ -56,11 +58,21 @@ app = FastAPI()
 
 @app.post("/descripcion")
 async def descripcion(descripcion: EntradasDescripcion):
+    headers = {
+        "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                       "AppleWebKit/537.36 (KHTML, like Gecko) "
+                       "Chrome/126.0.0.0 Safari/537.36"),
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "es-MX,es;q=0.9,en;q=0.8",
+        "Referer": "https://pmc.ncbi.nlm.nih.gov/",
+    }
+    res = requests.get(url=descripcion.url , headers=headers)
+
     titulo = descripcion.titulo
     url = descripcion.url
     response = client.responses.create(
         model="gpt-5",
-        input="entra al link " + descripcion.url + " y quiero que me hagas una descripcion del articulo solo y unicamente la descripcion  del ariticulo , esta descripcion es creada por ti  no me respondas ni me saludes , solo crea la lee el articulo y crae una corta descripcion"
+        input="lee esto " + res.text + " y quiero que me hagas una descripcion del articulo solo y unicamente la descripcion  del ariticulo , esta descripcion es creada por ti  no me respondas ni me saludes , solo crea la lee el articulo y crae una corta descripcion"
     )
     return Descripcion(titulo=titulo, url=url , descripcion=response.output_text)
 
