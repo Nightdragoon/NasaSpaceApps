@@ -34,8 +34,8 @@
                 <div class="input-field mb-3">
                     <label class="label form-label" for="email">Email</label>
                     <div class="input">
-                        <input id="email" name="email" type="email"
-                               class="value form-control" placeholder="you@example.com" required />
+                        <input id="email" name="email"
+                               class="value form-control" placeholder="usuario" required />
                     </div>
                     <span class="error small text-danger" role="alert"></span>
                 </div>
@@ -73,35 +73,39 @@ document.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector(".form-login");
     const emailInput = document.getElementById("email");
     const passwordInput = document.getElementById("password");
+
+    // Span de error, asegúrate que existe justo después del input
     const emailError = emailInput.nextElementSibling;
     const passwordError = passwordInput.nextElementSibling;
 
     function showError(input, span, message) {
-        span.textContent = message;
-        span.style.opacity = 0;
-        span.style.transition = "opacity 0.3s ease-in-out";
-        input.classList.add("is-invalid"); // resalta borde rojo
-        setTimeout(() => {
-            span.style.opacity = 1;
-        }, 50);
+        if(span){
+            span.textContent = message;
+            span.style.opacity = 0;
+            span.style.transition = "opacity 0.3s ease-in-out";
+            setTimeout(() => { span.style.opacity = 1; }, 50);
+        }
+        input.classList.add("is-invalid");
+        input.classList.remove("is-valid");
     }
 
     function clearError(input, span) {
-        span.textContent = "";
-        span.style.opacity = 0;
+        if(span){
+            span.textContent = "";
+            span.style.opacity = 0;
+        }
         input.classList.remove("is-invalid");
         input.classList.remove("is-valid");
     }
 
     function showSuccess(input) {
-        input.classList.add("is-valid"); // resalta borde verde
+        input.classList.add("is-valid");
         input.classList.remove("is-invalid");
     }
 
     form.addEventListener("submit", async function(e) {
         e.preventDefault();
 
-        // Limpiar errores previos
         clearError(emailInput, emailError);
         clearError(passwordInput, passwordError);
 
@@ -112,25 +116,19 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!usuario) {
             showError(emailInput, emailError, "Por favor ingresa tu usuario.");
             hasError = true;
-        } else {
-            showSuccess(emailInput);
         }
 
         if (!contraseña) {
             showError(passwordInput, passwordError, "Por favor ingresa tu contraseña.");
             hasError = true;
-        } else {
-            showSuccess(passwordInput);
         }
 
         if (hasError) return;
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/verifyuser", {
+            const response = await fetch("http://localhost:8000/verifyuser", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ usuario, contraseña })
             });
 
@@ -138,10 +136,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (response.ok) {
                 if (data.message === "Aqui se dirige al menu principal") {
-                    // Redirige al menú principal con id del usuario
-                    window.location.href = "/Home/Index?id=" + data.id;
+                    // Login correcto, muestra palomitas en ambos campos
+                    showSuccess(emailInput);
+                    showSuccess(passwordInput);
+                    // Redirigir al menú principal después de 500ms
+                    setTimeout(() => {
+                        window.location.href = "/Home/MenuPrincipal?id=" + data.id;
+                    }, 500);
                 } else {
-                    // Muestra error debajo del password
+                    // Login incorrecto, muestra error y elimina palomitas
                     showError(passwordInput, passwordError, data.message);
                 }
             } else {
@@ -157,3 +160,4 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 }
+
