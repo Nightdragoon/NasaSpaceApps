@@ -69,6 +69,9 @@
 
 @section Scripts {
 <script>
+    const urlHome = '@Url.Action("Index")';
+</script>
+<script>
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector(".form-login");
     const emailInput = document.getElementById("email");
@@ -129,7 +132,8 @@ document.addEventListener("DOMContentLoaded", function() {
             const response = await fetch("http://localhost:8000/verifyuser", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ usuario, contraseña })
+                body: JSON.stringify({usuario: usuario,
+                    contrasena : contraseña })
             });
 
             const data = await response.json();
@@ -141,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     showSuccess(passwordInput);
                     // Redirigir al menú principal después de 500ms
                     setTimeout(() => {
-                        window.location.href = "/Home/MenuPrincipal?id=" + data.id;
+                        window.location.href = urlHome+"?id=" + data.id;
                     }, 500);
                 } else {
                     // Login incorrecto, muestra error y elimina palomitas
