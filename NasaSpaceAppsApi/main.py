@@ -14,6 +14,7 @@ from ClasesApi.Busqueda import Busqueda
 from ClasesApi.Usuario import Usuario
 from ClasesApi.Historial import Historial
 from ClasesApi.HistorialEntrada import HistorialEntrada
+from rapidfuzz import fuzz
 
 from ClasesApi.Descripcion import  Descripcion
 from openai import OpenAI
@@ -205,10 +206,20 @@ async def generar_resumen(articulo: Articulo):
 
 
 @app.post("/enterdata")
-async def enter_data(  entradadatos: EntradaDatos):
+async def enter_data(entradadatos: EntradaDatos):
+    palabra = entradadatos.palabra.lower().strip()
+    resultados = []
 
-    datos = [ p for p in titulos if p.startswith(entradadatos.palabra)]
-    return Reultados(datos)
+    UMBRAL = 70  # tolerancia flexible
+
+    for titulo in titulos:
+        similitud = fuzz.partial_ratio(palabra, titulo.lower())
+        if similitud >= UMBRAL:
+            resultados.append(titulo)
+
+    return Reultados(resultados=resultados)
+
+
 
 
 @app.post("/busqueda")

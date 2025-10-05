@@ -6,3 +6,4 @@ openai
 pandas
 sqlalchemy
 PyMySQL
+rapidfuzz

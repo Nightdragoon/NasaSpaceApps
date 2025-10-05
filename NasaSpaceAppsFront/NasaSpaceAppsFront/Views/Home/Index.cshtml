@@ -14,6 +14,7 @@
             background-color: #0B1226;
             background-image: linear-gradient(180deg, #0B1226, #1E3259);
         }
+
     </style>
 
 
@@ -28,8 +29,8 @@
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid px-5">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="assets/img/logo.png" alt="Logo" width="60" class="me-2">
-        SpaceBioLab
+        <img src="~/helio_logo.png" alt="Logo" width="60" class="me-2">
+        Helio lab
       </a>
 
       <div class="d-flex">
@@ -38,6 +39,7 @@
             {
                 <a id="btnLoginNav" class="btn  btn-outline-light rounded-pill mx-1" asp-action="login">Login</a>
                 <a id="btnRegisterNav" class="btn  btn-outline-light rounded-pill mx-1" asp-action="singUp">Sign Up</a>
+
             }
             else
             {
@@ -45,6 +47,10 @@
                 <a id="btnSignOut" class="btn  btn-outline-light rounded-pill mx-1" asp-action="Index">Signout</a>
 
             }
+            <button class="btn btn-outline-light"
+                data-bs-toggle="offcanvas" data-bs-target="#ajustesPanel"
+                aria-controls="ajustesPanel">Ajustes</button>
+
         </div>
     </div>
   </nav>
@@ -58,8 +64,11 @@
 
     <nav class="navbar bg-transparent ">
         <div class="container-fluid d-flex flex-nowrap align-items-center gap-2 w-100">
-            <input class="form-control me-2 col-lg-12 text-white bg-black" type="search" placeholder="Search" id="search" aria-label="Search">
+            <form method="get" id="formulario_enviar" asp-action="busc" class=" d-flex flex-nowrap align-items-center gap-2 w-100">
+             <input class="form-control me-2 col-lg-12 text-white bg-black" type="search" placeholder="Search" id="search" name="search" aria-label="Search">
             <button class="btn btn-outline-success" id="searchButton"type="submit">Search</button>
+
+            </form>
         </div>
     </nav>
     <ul class="list-group bg-transparent" id="busqueda">
@@ -69,6 +78,75 @@
 
 
 </section>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="ajustesPanel" aria-labelledby="ajustesTitle">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="ajustesTitle">Configuración de accesibilidad</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="accordion" id="ajustesAccordion">
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="hdrVision">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#colVision" aria-expanded="true" aria-controls="colVision">
+                        Visión
+                    </button>
+                </h2>
+                <div id="colVision" class="accordion-collapse collapse show" data-bs-parent="#ajustesAccordion">
+                    <div class="accordion-body">
+                        <div class="form-check mb-2">
+                            <input class="form-check-input Ciego" type="checkbox" id="Ciego">
+                            <label class="form-check-label" for="highContrast">Ciego</label>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="hdrDaltonismo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#colDaltonismo" aria-expanded="false" aria-controls="colDaltonismo">
+                        Daltonismo
+                    </button>
+                </h2>
+                <div id="colDaltonismo" class="accordion-collapse collapse" data-bs-parent="#ajustesAccordion">
+                    <div class="accordion-body">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="cbMode" value="none" id="cbNone" checked>
+                            <label class="form-check-label" for="cbNone">Normal</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="cbMode" value="protanopia" id="cbPro">
+                            <label class="form-check-label" for="cbPro">Protanopia</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="cbMode" value="deuteranopia" id="cbDeu">
+                            <label class="form-check-label" for="cbDeu">Deuteranopia</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="cbMode" value="tritanopia" id="cbTri">
+                            <label class="form-check-label" for="cbTri">Tritanopia</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="cbMode" value="mono" id="cbMono">
+                            <label class="form-check-label" for="cbMono">Monocromático</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="my-3">
+        <div class="d-flex justify-content-end gap-2">
+            <button id="a11yReset" class="btn btn-light">Restablecer</button>
+            <button id="a11ySave" class="btn btn-primary" data-bs-dismiss="offcanvas">Guardar</button>
+        </div>
+    </div>
+</div>
 
 
 
@@ -80,6 +158,8 @@
     <!-- Controlador -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script>
+
+
 
 
 
@@ -113,14 +193,32 @@
          $('#busqueda').on('click', '.buttonResult', function () {
             const title = $(this).data('title');
             $('#search').val(title); // opcional: dispara nueva búsqueda
+        
         });
 
+            $('#busqueda').on('mouseenter', '.buttonResult', function () {
+          const title = $(this).data('title');
+          console.log($('#Ciego').prop('checked'));
+          if($('.Ciego').prop('checked')){
+           if (!('speechSynthesis' in window) || !title) return;
+
+          speechSynthesis.cancel();
+          const u = new SpeechSynthesisUtterance(title);
+          u.lang = 'es-MX'; u.rate = 1; u.pitch = 1;
+          speechSynthesis.speak(u);
+          }
+
+          
+        });
+        
        
     </script>
     @if (ViewBag.id != null)
     {
         <script>
-                $('#searchButton').on('click' , async function(){
+                $('#formulario_enviar').on('submit' , async function(e){
+                    e.preventDefault();
+                    const form = this;
                 let res = await fetch('http://127.0.0.1:8000/insertarHistorial' , {
                     method: "POST",
                     headers: {
@@ -133,9 +231,24 @@
                         url: "nsql"
                     })
                 });
+                form.submit();
 
             });
             
+        </script>
+
+    }
+    @if(ViewBag.id == null)
+    {
+        <script>
+            $('#formulario_enviar').on('submit' , async function(e){
+                 e.preventDefault();
+                 const form = this;
+               
+                form.submit();
+            });
+
+
         </script>
     }
 }

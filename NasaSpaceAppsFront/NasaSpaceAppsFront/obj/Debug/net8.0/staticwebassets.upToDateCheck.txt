@@ -6,6 +6,7 @@ wwwroot\css\site.css
 wwwroot\css\style.css
 wwwroot\favicon.ico
 wwwroot\fondo.png
+wwwroot\helio_logo.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map

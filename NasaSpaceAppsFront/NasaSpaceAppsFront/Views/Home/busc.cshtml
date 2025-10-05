@@ -1,0 +1,73 @@
+﻿@model ArticuloModelFinal
+@{
+    ViewData["Title"] = "Articulos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            background-color: #0B1226;
+            background-image: linear-gradient(180deg, #0B1226, #1E3259);
+        }
+
+    </style>
+
+
+}
+<section class="login-page position-relative min-vh-100 overflow-hidden">
+    <div class="bg-photo"></div>
+    <div class="rect-1"></div>
+    <div class="rect-3"></div>
+
+    <div class="container-fluid py-5">
+        <div class="row justify-content-center">
+            <div class="col-11 col-md-10 col-lg-9 col-xl-8">
+
+                <div class="form-login bg-white p-5 rounded-4 shadow-lg">
+                    <div class="mb-5 text-center">
+                        <img class="brand-logo mb-3" src="/img/Captura_de_pantalla_2025-10-04_130505-removebg-preview.png" alt="Logo" />
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold fs-4 text-dark" for="titulo">Título</label>
+                        <input id="titulo" name="titulo" class="form-control form-control-lg fw-semibold text-dark" readonly value="@Model.titulo" />
+                    </div>
+
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold fs-4 text-dark" for="descripcion">Descripción</label>
+                        <textarea id="descripcion" name="descripcion"  rows="8" class="form-control form-control-lg fw-semibold text-dark" readonly() >@Model.desarrollo</textarea>
+                    </div
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold fs-4 text-dark" for="intro">Introduccion</label>
+                        <textarea id="intro" name="intro" rows="8" class="form-control form-control-lg fw-semibold text-dark" readonly >@Model.introduccion_contexto</textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold fs-4 text-white" for="hallazgos">Descripción</label>
+                        <textarea id="hallazgos" name="hallazgos"  rows="8" class="form-control form-control-lg fw-semibold text-dark" readonly >@Model.hallazgos_clave</textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold fs-4 text-white" for="conclusiones">Conclusiones</label>
+                        <textarea id="conclusiones" name="conclusiones" values="@Model.conclusion_implicaciones" rows="8" class="form-control form-control-lg fw-semibold text-dark" readonly() >@Model.conclusion_implicaciones</textarea>
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <label class="form-label fw-bold fs-4 text-white">URL</label>
+                        <div>
+                            <a id="enlace" class="fs-5 fw-semibold text-primary text-decoration-underline text-break" href="@Model.url" target="_blank" rel="noopener">(Sin URL)</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

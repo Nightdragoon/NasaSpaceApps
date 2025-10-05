@@ -3,43 +3,79 @@
   "WorkspaceRootPath": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\views\\home\\busc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\views\\home\\busc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\views\\home\\historial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\views\\home\\historial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\models\\historialmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\models\\historialmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\models\\articulomodelfinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\models\\articulomodelfinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\models\\articulomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\models\\articulomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\repositorios\\iapiconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\repositorios\\iapiconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\models\\articuloviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\models\\articuloviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\models\\articulofinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\models\\articulofinal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\models\\historialmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\models\\historialmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\models\\descripcionentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\models\\descripcionentrada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\models\\entradatitulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\models\\entradatitulo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\models\\articuloentradamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\models\\articuloentradamodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\views\\home\\singup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\views\\home\\singup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\views\\home\\historial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\views\\home\\historial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|c:\\users\\joaquinemmanuelamezc\\documents\\github\\nasaspaceapps\\nasaspaceappsfront\\nasaspaceappsfront\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C08CDE6F-2033-4712-B76F-A497A798A7AD}|NasaSpaceAppsFront\\NasaSpaceAppsFront.csproj|solutionrelative:nasaspaceappsfront\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -49,11 +85,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 18,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Views\\Shared\\_Layout.cshtml",
@@ -62,20 +98,68 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-05T02:37:28.323Z",
-              "IsPinned": true,
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ArticuloModel.cs",
+              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\ArticuloModel.cs",
+              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Models\\ArticuloModel.cs",
+              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\ArticuloModel.cs",
+              "RelativeToolTip": "NasaSpaceAppsFront\\Models\\ArticuloModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T10:49:48.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "busc.cshtml",
+              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\busc.cshtml",
+              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Views\\Home\\busc.cshtml",
+              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\busc.cshtml",
+              "RelativeToolTip": "NasaSpaceAppsFront\\Views\\Home\\busc.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAwwD0AAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-05T10:25:44.713Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Historial.cshtml",
-              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\Historial.cshtml",
-              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Views\\Home\\Historial.cshtml",
-              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\Historial.cshtml",
-              "RelativeToolTip": "NasaSpaceAppsFront\\Views\\Home\\Historial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAACnAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ArticuloModelFinal.cs",
+              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\ArticuloModelFinal.cs",
+              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Models\\ArticuloModelFinal.cs",
+              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\ArticuloModelFinal.cs",
+              "RelativeToolTip": "NasaSpaceAppsFront\\Models\\ArticuloModelFinal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T11:33:48.742Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "NasaSpaceAppsFront\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-05T07:59:49.738Z",
+              "WhenOpened": "2025-10-05T02:30:15.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "ViewState": "AgIAAEgCAAAAAAAAAAAjwGYCAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-10-05T08:24:15.387Z",
               "EditorCaption": ""
             },
             {
@@ -86,40 +170,62 @@
               "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Controllers\\HomeController.cs",
               "RelativeToolTip": "NasaSpaceAppsFront\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-05T02:31:29.686Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "IApiConnector.cs",
               "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Repositorios\\IApiConnector.cs",
               "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Repositorios\\IApiConnector.cs",
               "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Repositorios\\IApiConnector.cs",
               "RelativeToolTip": "NasaSpaceAppsFront\\Repositorios\\IApiConnector.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAB3AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T08:08:08.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-05T08:08:08.92Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "NasaSpaceAppsFront\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAAACcAAABfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-05T02:30:15.519Z",
-              "EditorCaption": ""
+              "DocumentIndex": 7,
+              "Title": "ArticuloViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\ArticuloViewModel.cs",
+              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Models\\ArticuloViewModel.cs",
+              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\ArticuloViewModel.cs",
+              "RelativeToolTip": "NasaSpaceAppsFront\\Models\\ArticuloViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T11:34:21.833Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "NasaSpaceAppsFront\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T11:38:16.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ArticuloFinal.cs",
+              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\ArticuloFinal.cs",
+              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Models\\ArticuloFinal.cs",
+              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\ArticuloFinal.cs",
+              "RelativeToolTip": "NasaSpaceAppsFront\\Models\\ArticuloFinal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T11:28:32.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "HistorialModel.cs",
               "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\HistorialModel.cs",
               "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Models\\HistorialModel.cs",
@@ -127,25 +233,83 @@
               "RelativeToolTip": "NasaSpaceAppsFront\\Models\\HistorialModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T08:06:53.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-05T08:06:53.734Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Microsoft.NET.Sdk.StaticWebAssets.targets",
-              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
-              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
-              "ViewState": "AgIAAEsCAAAAAAAAAAAQwGYCAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-10-05T08:24:15.387Z",
-              "EditorCaption": ""
+              "DocumentIndex": 11,
+              "Title": "DescripcionEntrada.cs",
+              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\DescripcionEntrada.cs",
+              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Models\\DescripcionEntrada.cs",
+              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\DescripcionEntrada.cs",
+              "RelativeToolTip": "NasaSpaceAppsFront\\Models\\DescripcionEntrada.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T11:04:38.659Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
+              "Title": "EntradaTitulo.cs",
+              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\EntradaTitulo.cs",
+              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Models\\EntradaTitulo.cs",
+              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\EntradaTitulo.cs",
+              "RelativeToolTip": "NasaSpaceAppsFront\\Models\\EntradaTitulo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T10:58:46.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "login.cshtml",
+              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\login.cshtml",
+              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Views\\Home\\login.cshtml",
+              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\login.cshtml",
+              "RelativeToolTip": "NasaSpaceAppsFront\\Views\\Home\\login.cshtml",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAAAF4AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-05T02:30:12.25Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "singUp.cshtml",
+              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\singUp.cshtml",
+              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Views\\Home\\singUp.cshtml",
+              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\singUp.cshtml",
+              "RelativeToolTip": "NasaSpaceAppsFront\\Views\\Home\\singUp.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-05T02:33:37.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ArticuloEntradaModel.cs",
+              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\ArticuloEntradaModel.cs",
+              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Models\\ArticuloEntradaModel.cs",
+              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Models\\ArticuloEntradaModel.cs",
+              "RelativeToolTip": "NasaSpaceAppsFront\\Models\\ArticuloEntradaModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T10:50:40.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Historial.cshtml",
+              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\Historial.cshtml",
+              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Views\\Home\\Historial.cshtml",
+              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\Historial.cshtml",
+              "RelativeToolTip": "NasaSpaceAppsFront\\Views\\Home\\Historial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAACnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-05T07:59:49.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Program.cs",
               "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Program.cs",
@@ -153,33 +317,7 @@
               "RelativeToolTip": "NasaSpaceAppsFront\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T08:14:26.986Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "singUp.cshtml",
-              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\singUp.cshtml",
-              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Views\\Home\\singUp.cshtml",
-              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\singUp.cshtml",
-              "RelativeToolTip": "NasaSpaceAppsFront\\Views\\Home\\singUp.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAAGQAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-05T02:33:37.353Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "login.cshtml",
-              "DocumentMoniker": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\login.cshtml",
-              "RelativeDocumentMoniker": "NasaSpaceAppsFront\\Views\\Home\\login.cshtml",
-              "ToolTip": "C:\\Users\\JoaquinEmmanuelAmezc\\Documents\\GitHub\\NasaSpaceApps\\NasaSpaceAppsFront\\NasaSpaceAppsFront\\Views\\Home\\login.cshtml",
-              "RelativeToolTip": "NasaSpaceAppsFront\\Views\\Home\\login.cshtml",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAQwJMAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-05T02:30:12.25Z"
+              "WhenOpened": "2025-10-05T08:14:26.986Z"
             }
           ]
         }
