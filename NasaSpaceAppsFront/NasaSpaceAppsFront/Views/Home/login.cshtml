@@ -1,167 +1,118 @@
 @{
+    ViewData["Title"] = "Log In";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
+}
+@section Styles {
+    <style>
+        html, body { height: 100%; margin: 0; }
+        body {
+            background-color: #0B1226;
+            background-image: linear-gradient(180deg, #0B1226, #1E3259);
+        }
+        .brand-logo { height: 48px; }
+        .form-control-ux {
+            background: rgba(255,255,255,.06);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,.15);
+        }
+        .form-control-ux::placeholder { color: rgba(255,255,255,.6); }
+        .link-ux { color: #cfd8ff; }
+        .btn-ux { border-radius: 999px; }
+    </style>
 }
 
-<!-- LOGIN PAGE -->
-<section class="login-page position-relative min-vh-100 overflow-hidden">
-
-  <!-- Fondo: foto con opacidad -->
-  <div class="bg-photo"></div>
-
-  <!-- Rectángulos con gradiente (puedes dejar uno si es duplicado) -->
-  <div class="rect-1"></div>
-  <div class="rect-3"></div>
-
-  <!-- Encabezado (logo + título) -->
-  <header class="login-header">
-    <img class="brand-logo"
-         src="/img/Captura_de_pantalla_2025-10-04_130505-removebg-preview.png"
-         alt="Logo" />
-    <h1 class="login-title">Log In</h1>
-  </header>
-
-  <!-- Formulario -->
-    <!-- Contenedor pantalla completa -->
-    <div class="container min-vh-100 d-flex align-items-center justify-content-center">
-
-        <!-- Ancho responsivo -->
-        <div class="col-11 col-sm-8 col-md-6 col-lg-4">
-
-            <form class="form-login bg-white p-4 p-md-5 rounded-4 shadow">
-
-                <!-- Input 1 -->
-                <div class="input-field mb-3">
-                    <label class="label form-label" for="email">Email</label>
-                    <div class="input">
-                        <input id="email" name="email"
-                               class="value form-control" placeholder="usuario" required />
-                    </div>
-                    <span class="error small text-danger" role="alert"></span>
-                </div>
-
-                <!-- Input 2 -->
-                <div class="input-field mb-4">
-                    <label class="label form-label" for="password">Password</label>
-                    <div class="input">
-                        <input id="password" name="password" type="password"
-                               class="value form-control" placeholder="••••••••" required />
-                    </div>
-                    <span class="error small text-danger" role="alert"></span>
-                </div>
-
-                <!-- Botón -->
-                <div class="button-group d-grid mb-3">
-                    <button type="submit" class="button btn btn-primary">Sign in</button>
-                </div>
-
-                <!-- Enlace -->
-                <div class="text-link text-center">
-                    <a class="text-link__a" href="/Account/ForgotPassword">Forgot password?</a>
-                </div>
-
-            </form>
-
-        </div>
+<section class="hero-bg d-flex align-items-start align-items-lg-center min-vh-100 py-4 py-lg-0">
+  <div class="container position-relative">
+    <!-- Encabezado -->
+    <div class="row mb-4 mb-lg-5">
+      <div class="col-12 d-flex align-items-center gap-3">
+        <img src="~/img/Captura_de_pantalla_2025-10-04_130505-removebg-preview.png"
+             alt="Logo"
+             class="brand-logo img-fluid" />
+        <h1 class="create-title m-0 text-white">Log In</h1>
+      </div>
     </div>
 
+    <!-- Formulario (mismo formato que registro) -->
+    <div class="row justify-content-start">
+      <div class="col-12 col-md-10 col-lg-7 col-xl-6">
+        <div class="card-body p-4">
+
+          <!-- Username -->
+          <div class="mb-3">
+            <label for="username" class="form-label fw-normal text-white">Username</label>
+            <input id="username" name="usuario" type="text"
+                   class="form-control form-control-ux"
+                   placeholder="your_username" autocomplete="username" required>
+          </div>
+
+          <!-- Password -->
+          <div class="mb-4">
+            <label for="password" class="form-label fw-normal text-white">Password</label>
+            <input id="password" name="contrasena" type="password"
+                   class="form-control form-control-ux"
+                   placeholder="••••••••" autocomplete="current-password" required>
+          </div>
+
+          <!-- Botón -->
+          <div class="d-grid mb-3">
+            <button type="button" id="submit" class="btn btn-dark btn-ux">Sign in</button>
+          </div>
+
+          <!-- Link a registro -->
+          <div class="text-center">
+            <a href='@Url.Action("singUp","Home")' class="text-decoration-underline link-ux">
+              Don’t have an account? Create one
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-@section Scripts {
-<script>
-    const urlHome = '@Url.Action("Index")';
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector(".form-login");
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
+@section Scripts{
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    // Span de error, asegúrate que existe justo después del input
-    const emailError = emailInput.nextElementSibling;
-    const passwordError = passwordInput.nextElementSibling;
+    <script>
+      const urlHome = '@Url.Action("Index","Home")';
 
-    function showError(input, span, message) {
-        if(span){
-            span.textContent = message;
-            span.style.opacity = 0;
-            span.style.transition = "opacity 0.3s ease-in-out";
-            setTimeout(() => { span.style.opacity = 1; }, 50);
+      $("#submit").on("click", async function(){
+        const usuario    = $("#username").val().trim();
+        const contrasena = $("#password").val().trim();
+
+        if (!usuario || !contrasena) {
+          alert("Please fill in both fields.");
+          return;
         }
-        input.classList.add("is-invalid");
-        input.classList.remove("is-valid");
-    }
-
-    function clearError(input, span) {
-        if(span){
-            span.textContent = "";
-            span.style.opacity = 0;
-        }
-        input.classList.remove("is-invalid");
-        input.classList.remove("is-valid");
-    }
-
-    function showSuccess(input) {
-        input.classList.add("is-valid");
-        input.classList.remove("is-invalid");
-    }
-
-    form.addEventListener("submit", async function(e) {
-        e.preventDefault();
-
-        clearError(emailInput, emailError);
-        clearError(passwordInput, passwordError);
-
-        const usuario = emailInput.value.trim();
-        const contraseña = passwordInput.value.trim();
-        let hasError = false;
-
-        if (!usuario) {
-            showError(emailInput, emailError, "Por favor ingresa tu usuario.");
-            hasError = true;
-        }
-
-        if (!contraseña) {
-            showError(passwordInput, passwordError, "Por favor ingresa tu contraseña.");
-            hasError = true;
-        }
-
-        if (hasError) return;
 
         try {
-            const response = await fetch("http://localhost:8000/verifyuser", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({usuario: usuario,
-                    contrasena : contraseña })
-            });
+          const res = await fetch("http://localhost:8000/verifyuser", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "accept": "application/json"
+            },
+            body: JSON.stringify({
+              usuario: usuario,
+              contrasena: contrasena
+            })
+          });
 
-            const data = await response.json();
+          const data = await res.json();
 
-            if (response.ok) {
-                if (data.message === "Aqui se dirige al menu principal") {
-                    // Login correcto, muestra palomitas en ambos campos
-                    showSuccess(emailInput);
-                    showSuccess(passwordInput);
-                    // Redirigir al menú principal después de 500ms
-                    setTimeout(() => {
-                        window.location.href = urlHome+"?id=" + data.id;
-                    }, 500);
-                } else {
-                    // Login incorrecto, muestra error y elimina palomitas
-                    showError(passwordInput, passwordError, data.message);
-                }
-            } else {
-                const msg = data.detail || "No se pudo conectar con el servidor";
-                showError(passwordInput, passwordError, msg);
-            }
-
-        } catch (error) {
-            console.error(error);
-            showError(passwordInput, passwordError, "Ocurrió un error al conectar con el servidor");
+          if (res.ok && data.message === "Aqui se dirige al menu principal") {
+            // Redirige al home con el id que devuelve tu API
+            window.location.href = urlHome + (data.id ? ("?id=" + data.id) : "");
+          } else {
+            alert(data.message || "Invalid credentials.");
+          }
+        } catch (e) {
+          console.error(e);
+          alert("Server error. Please try again.");
         }
-    });
-});
-</script>
+      });
+    </script>
 }
-
