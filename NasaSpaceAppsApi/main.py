@@ -23,9 +23,8 @@ from ClasesApi.ArticuloResumen import ArticuloResumen
 from ClasesApi.Articulo import Articulo
 # OpenAI
 from openai import OpenAI
-from dotenv import load_dotenv
+
 import json
-load_dotenv()
 
 
 client = OpenAI()
