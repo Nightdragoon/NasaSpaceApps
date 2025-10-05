@@ -1,8 +1,5 @@
-
+from pydantic import BaseModel
 from typing import List
 
-class Reultados:
-    def __init__(self, resultados: List[str]):
-        self.resultados = resultados
-
+class Reultados(BaseModel):
     resultados: List[str]

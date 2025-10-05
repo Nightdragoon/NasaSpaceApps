@@ -3,6 +3,7 @@ import csv
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import pandas as pd
+from typing import List
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine , select , insert , delete, update
@@ -21,6 +22,7 @@ import requests
 
 from ClasesApi.ArticuloResumen import ArticuloResumen
 from ClasesApi.Articulo import Articulo
+from ClasesApi.BusquedaSalida import BusquedaResultado
 # OpenAI
 from openai import OpenAI
 from fastapi.middleware.cors import CORSMiddleware
@@ -222,67 +224,35 @@ async def generar_resumen(articulo: Articulo):
 #             buscar.url = links[j]
 #     return buscar
 
-from rapidfuzz import fuzz  # fpara coincidencia aproximada
+from rapidfuzz import fuzz
 
 @app.post("/enterdata")
 async def enter_data(entradadatos: EntradaDatos):
     palabra = entradadatos.palabra.lower().strip()
     resultados = []
 
-    # Definir un umbral de similitud (0 a 100)
-    UMBRAL = 60  # puedes subir a 70 o bajar a 50 según quieras más o menos tolerancia
+    UMBRAL = 70  # tolerancia flexible
 
-    for titulo, url in zip(titulos, links):
+    for titulo in titulos:
         similitud = fuzz.partial_ratio(palabra, titulo.lower())
         if similitud >= UMBRAL:
-            resultados.append({
-                "titulo": titulo
-            })
-            # resultados.append({
-            #     "titulo": titulo,
-            #     "url": url,
-            #     "coincidencia": similitud
-            # })
+            resultados.append(titulo)
 
-    # Ordenar por similitud (más parecidos primero)
-    resultados.sort(key=lambda x: x["coincidencia"], reverse=True)
-    Reultados(resultados)
-    # return {"resultados": resultados}
+    return Reultados(resultados=resultados)
+
 
 
 
 @app.post("/busqueda")
 async def busqueda(busqueda: BusquedaEntrada):
-    buscar = Busqueda()
-    buscar.titulo = ""
-    buscar.url = ""
-    for j in range(0 , len(titulos) -1):
-        if titulos[j] == busqueda.titulo:
-            buscar.titulo = titulos[j]
-            buscar.url = links[j]
-    return buscar
+    palabra = busqueda.titulo.lower().strip()
+    resultados: List[BusquedaResultado] = []  # lista vacía para acumular coincidencias
 
+    UMBRAL = 70  # tolerancia de similitud
 
+    for t, u in zip(titulos, links):
+        similitud = fuzz.partial_ratio(palabra, t.lower())
+        if similitud >= UMBRAL:
+            resultados.append(BusquedaResultado(titulo=t, url=u))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return resultados
