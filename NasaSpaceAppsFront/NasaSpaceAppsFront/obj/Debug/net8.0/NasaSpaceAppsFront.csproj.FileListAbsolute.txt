@@ -59,3 +59,15 @@ C:\Users\JoaquinEmmanuelAmezc\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\
 C:\Users\JoaquinEmmanuelAmezc\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\NasaSpaceAppsFront\obj\Debug\net8.0\NasaSpaceAppsFront.pdb
 C:\Users\JoaquinEmmanuelAmezc\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\NasaSpaceAppsFront\obj\Debug\net8.0\NasaSpaceAppsFront.genruntimeconfig.cache
 C:\Users\JoaquinEmmanuelAmezc\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\NasaSpaceAppsFront\obj\Debug\net8.0\ref\NasaSpaceAppsFront.dll
+C:\Users\LENOVO\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\NasaSpaceAppsFront\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\LENOVO\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\NasaSpaceAppsFront\obj\Debug\net8.0\NasaSpaceAppsFront.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\NasaSpaceAppsFront\obj\Debug\net8.0\NasaSpaceAppsFront.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\NasaSpaceAppsFront\obj\Debug\net8.0\NasaSpaceAppsFront.AssemblyInfo.cs
+C:\Users\LENOVO\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\NasaSpaceAppsFront\obj\Debug\net8.0\NasaSpaceAppsFront.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\NasaSpaceAppsFront\obj\Debug\net8.0\NasaSpaceAppsFront.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\LENOVO\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\NasaSpaceAppsFront\obj\Debug\net8.0\NasaSpaceAppsFront.RazorAssemblyInfo.cache
+C:\Users\LENOVO\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\NasaSpaceAppsFront\obj\Debug\net8.0\NasaSpaceAppsFront.RazorAssemblyInfo.cs
+C:\Users\LENOVO\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\NasaSpaceAppsFront\obj\Debug\net8.0\NasaSpaceAppsFront.sourcelink.json
+C:\Users\LENOVO\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\NasaSpaceAppsFront\obj\Debug\net8.0\NasaSpaceAppsFront.dll
+C:\Users\LENOVO\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\NasaSpaceAppsFront\obj\Debug\net8.0\refint\NasaSpaceAppsFront.dll
+C:\Users\LENOVO\Documents\GitHub\NasaSpaceApps\NasaSpaceAppsFront\NasaSpaceAppsFront\obj\Debug\net8.0\NasaSpaceAppsFront.pdb
