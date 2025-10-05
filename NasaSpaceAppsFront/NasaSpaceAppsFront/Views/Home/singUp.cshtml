@@ -15,8 +15,7 @@
         .link-ux { color: #cfd8ff; }
         .btn-ux { border-radius: 999px; }
 
-        /* === SOLO para el SELECT de Sexo === */
-        /* Texto y fondo del select (valor mostrado) */
+       
         #sex.text-dark-select {
             color: #000 !important;
             background-color: #fff !important;
@@ -31,7 +30,7 @@
 
 <section class="hero-bg d-flex align-items-start align-items-lg-center min-vh-100 py-4 py-lg-0">
   <div class="container position-relative">
-    <!-- Encabezado -->
+   
     <div class="row mb-4 mb-lg-5">
       <div class="col-12 d-flex align-items-center gap-3">
         <img src="~/img/Captura_de_pantalla_2025-10-04_130505-removebg-preview.png"
@@ -41,12 +40,10 @@
       </div>
     </div>
 
-    <!-- Formulario -->
     <div class="row justify-content-start">
       <div class="col-12 col-md-10 col-lg-7 col-xl-6">
         <div class="card-body p-4">
 
-          <!-- Nombre de usuario -->
           <div class="mb-3">
             <label for="username" class="form-label fw-normal text-white">Nombre de usuario</label>
             <input id="username" name="usuario" type="text"
@@ -54,7 +51,7 @@
                    placeholder="tu_usuario" autocomplete="username" required>
           </div>
 
-          <!-- Edad -->
+         
           <div class="mb-3">
             <label for="age" class="form-label fw-normal text-white">Edad</label>
             <input id="age" name="edad" type="number" min="0" max="120"
@@ -62,7 +59,7 @@
                    placeholder="18" required>
           </div>
 
-          <!-- Sexo -->
+          
           <div class="mb-3">
             <label for="sex" class="form-label fw-normal text-white">Sexo</label>
             <select id="sex" name="sexo" class="form-select form-control-ux text-dark-select" required>
@@ -74,7 +71,7 @@
             </select>
           </div>
 
-          <!-- Contraseña -->
+          
           <div class="mb-4">
             <label for="password" class="form-label fw-normal text-white">Contraseña</label>
             <input id="password" name="contrasena" type="password"
@@ -82,7 +79,7 @@
                    placeholder="••••••••" autocomplete="new-password" required>
           </div>
 
-          <!-- Botón -->
+          
           <div class="d-grid">
             <button type="button" id="submit" class="btn btn-dark btn-ux">Crear cuenta</button>
           </div>
