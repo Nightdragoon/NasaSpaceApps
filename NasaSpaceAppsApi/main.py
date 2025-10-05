@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 import csv
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import pandas as pd
 from sqlalchemy.ext.automap import automap_base
@@ -13,9 +14,20 @@ from ClasesApi.Busqueda import Busqueda
 from ClasesApi.Usuario import Usuario
 from ClasesApi.Historial import Historial
 from ClasesApi.HistorialEntrada import HistorialEntrada
+
 from ClasesApi.Descripcion import  Descripcion
 from openai import OpenAI
 
+from ClasesApi.ArticuloResumen import ArticuloResumen
+from ClasesApi.Articulo import Articulo
+# OpenAI
+from openai import OpenAI
+from dotenv import load_dotenv
+import json
+load_dotenv()
+
+
+client = OpenAI()
 
 
 app = FastAPI()
@@ -39,6 +51,7 @@ titulos = data.Title.values.tolist()
 links = data.Link.values.tolist()
 
 app = FastAPI()
+
 
 
 @app.post("/descripcion")
@@ -123,6 +136,56 @@ async def prueba():
     palabras.append("cola")
     p = Reultados(palabras)
     return p
+
+
+
+@app.post("/resumen")
+async def generar_resumen(articulo: Articulo):
+    try:
+        prompt = f"""
+        Basado en los fragmentos de artículos científicos recuperados,
+        Título: {articulo.titulo}
+        Link: {articulo.link}
+        Descripción: {articulo.descripcion}
+
+        Devuelve solo un JSON válido con estas claves:
+        {{
+            "titulo": "",
+            "introduccion_contexto": "",
+            "hallazgos_clave": "",
+            "conclusion_implicaciones": ""
+        }}
+        No agregues explicaciones ni texto adicional.
+        """
+
+        response = client.chat.completions.create(
+            model="gpt-4o",
+            messages=[
+                {"role": "system", "content": "Eres un analista experto en biología espacial."},
+                {"role": "user", "content": prompt}
+            ],
+            temperature=0.2
+        )
+
+        content = response.choices[0].message.content.strip()
+
+        # Extraer solo el JSON
+        import re, json
+        json_text = re.search(r'\{.*\}', content, re.DOTALL)
+        if not json_text:
+            raise HTTPException(status_code=500, detail="La IA no devolvió un JSON válido")
+        data = json.loads(json_text.group())
+
+        resumen = ArticuloResumen()
+        resumen.titulo = data.get("titulo", "")
+        resumen.introduccion_contexto = data.get("introduccion_contexto", "")
+        resumen.hallazgos_clave = data.get("hallazgos_clave", "")
+        resumen.conclusion_implicaciones = data.get("conclusion_implicaciones", "")
+
+        return resumen
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 
