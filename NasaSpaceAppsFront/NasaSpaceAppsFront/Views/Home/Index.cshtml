@@ -39,6 +39,11 @@
                 <a id="btnLoginNav" class="btn  btn-outline-light rounded-pill mx-1" asp-action="login">Login</a>
                 <a id="btnRegisterNav" class="btn  btn-outline-light rounded-pill mx-1" asp-action="singUp">Sign Up</a>
             }
+            else
+            {
+                <a id="btnHistorial" class="btn  btn-outline-light rounded-pill mx-1" asp-route-id=@ViewBag.id asp-action="Historial">Historial</a>
+
+            }
         </div>
     </div>
   </nav>

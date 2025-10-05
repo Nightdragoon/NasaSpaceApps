@@ -1,0 +1,30 @@
+﻿@model HistorialModel
+@{
+    ViewData["Title"] = "Historial";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            background-color: #0B1226;
+            background-image: linear-gradient(180deg, #0B1226, #1E3259);
+        }
+    </style>
+
+
+}
+<div class="container">
+    <ul class="list-group bg-transparent" id="busqueda">
+        @foreach(var histo in Model.historial)
+        {
+            <li class="list-group-item bg-transparent text-white"><button class=" btn btn-outline-light w-100 text-white buttonResult py-2" type="button">@histo.titulo </button></li>
+        }
+    </ul>
+
+</div>
