@@ -86,10 +86,11 @@ This project builds upon the concept shown in the NASA Space Apps video, *Helios
 
 ## 🧑‍💻 Contributors & Team
 
-- [Name1] — Lead Backend / Data  
-- [Name2] — Lead Frontend / Viz  
-- [Name3] — Data Engineering & Integration  
-- [Name4] — DevOps & Deployment  
+- Emmannuel — Lead Backend / Data  
+- Jacky — Lead Frontend / Viz  
+- Brandon Almanza — Data Engineering & Integration  
+- Aron — DevOps & Deployment
+- Sarahi — DevOps & Deployment  
 
 ## 📄 License
 
