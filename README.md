@@ -1,4 +1,3 @@
-````
 # NASA Space Apps — Helios Biology Knowledge Engine
 
 ## 🚀 Project Overview
